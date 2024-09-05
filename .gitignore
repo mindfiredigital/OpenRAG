@@ -1,0 +1,11 @@
+__pycache__/
+app.log
+.env
+Rag_UI.py
+venv/
+env/
+lib/
+
+chromadb_store/
+faiss_store/
+qdrant_store/
