@@ -1,6 +1,16 @@
 # CHANGELOG
 
+## v0.1.2 (2024-09-05)
+
+### Unknown
+
+* Merge remote-tracking branch &#39;origin/master&#39; ([`e60e3b9`](https://github.com/mindfiredigital/open-rag/commit/e60e3b9f4b9f3fedd46b1094ecb0a8de4b69bc0e))
+
 ## v0.1.1 (2024-09-05)
+
+### Fix
+
+* fix: update workflow file ([`1d7fd87`](https://github.com/mindfiredigital/open-rag/commit/1d7fd876d92753bda2d96121b843b8e97c0e80ad))
 
 ### Unknown
 
