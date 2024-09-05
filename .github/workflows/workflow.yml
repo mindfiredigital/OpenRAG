@@ -57,11 +57,11 @@ jobs:
     #     git tag -a "$VERSION" -m "Release $VERSION"
     #     git push origin --tags
 
-    - name: Raise PR from master to main
-      uses: peter-evans/create-pull-request@v5
-      with:
-        base: main
-        head: master
-        title: 'Release PR: master -> main'
-        body: 'This PR merges the changes from the master branch back into main after the release.'
-        branch: pr-master-to-main
+    # - name: Raise PR from master to main
+    #   uses: peter-evans/create-pull-request@v5
+    #   with:
+    #     base: main
+    #     head: master
+    #     title: 'Release PR: master -> main'
+    #     body: 'This PR merges the changes from the master branch back into main after the release.'
+    #     branch: pr-master-to-main
