@@ -1,53 +1,17 @@
-# Changelog
+# CHANGELOG
 
-All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## v0.1.0 (2024-09-05)
 
-## [Unreleased]
+### Feature
 
-### Added
+* feat: add github actions ([`8b86513`](https://github.com/mindfiredigital/open-rag/commit/8b86513c631ae41ec0baf63c70dfb6fa21fe80a4))
 
-- [List new features or enhancements added but not yet released]
+### Fix
 
-### Changed
+* fix: removed pyproject.toml file ([`ecddebd`](https://github.com/mindfiredigital/open-rag/commit/ecddebd6465f816442139cc034fa617f49878a74))
 
-- [List changes, improvements, or modifications made but not yet released]
+* fix: improved folder structure ([`9b639ad`](https://github.com/mindfiredigital/open-rag/commit/9b639ad8e345e0a8e9d4a5ce1bd6eda1c27fc269))
 
-### Fixed
+### Unknown
 
-- [List bug fixes or corrections made but not yet released]
-
-## [Version] - YYYY-MM-DD
-
-### Added
-
-- [List new features or enhancements added in this version]
-
-### Changed
-
-- [List changes, improvements, or modifications made in this version]
-
-### Fixed
-
-- [List bug fixes or corrections made in this version]
-
-## [Older Versions]
-
-[Repeat the above sections for older versions of your project]
-
-## Contributing
-
-Please read [CONTRIBUTING.md](./contributing-template.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Authors
-
-- Author 1
-- Author 2
-
-## License
-
-This project is licensed under the [License Name] - see the [LICENSE.md](./license-template.md) file for details.
-
-## Customization
-
-You can customize this changelog to meet the specific needs and preferences of your project. Feel free to modify the structure, add more details, or change the formatting to better suit your project's versioning and documentation requirements.
-
+* initial commit ([`9d3d5fd`](https://github.com/mindfiredigital/open-rag/commit/9d3d5fdd2b686496d13cd7dcf30b19ec7e4d5fc4))
