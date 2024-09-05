@@ -12,12 +12,11 @@ from Openembedder import OpenEmbedder
 
 # Set up logging
 log_file_path = "app.log"
-logging.basicConfig(level=logging.INFO,
-                    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-                    handlers=[
-                        logging.FileHandler(log_file_path),
-                        logging.StreamHandler()
-                    ])
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    handlers=[logging.FileHandler(log_file_path), logging.StreamHandler()],
+)
 logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Open RAG", version="0.1")
@@ -47,10 +46,13 @@ async def get_llm_options():
 async def upload_pdf(
     model_name: str = Form(...),
     vector_db_name: str = Form(...),
-    file: UploadFile = File(...)
+    file: UploadFile = File(...),
 ):
     logger.info(
-        "Upload request received for model: %s and vector DB: %s", model_name, vector_db_name)
+        "Upload request received for model: %s and vector DB: %s",
+        model_name,
+        vector_db_name,
+    )
 
     if vector_db_name not in VECTOR_DB_LIST:
         logger.error("Invalid vector database name: %s", vector_db_name)
@@ -67,7 +69,9 @@ async def upload_pdf(
     file_size = file.size
     if file_size > 10 * 1024 * 1024:  # 10 MB in bytes
         logger.error("File size exceeds limit: %s", file_size)
-        raise HTTPException(status_code=400, detail="PDF file size must be less than 10 MB")
+        raise HTTPException(
+            status_code=400, detail="PDF file size must be less than 10 MB"
+        )
 
     tmp_filename = uuid.uuid4().hex + ".txt"
     tmp_file_path = tmp_dir / tmp_filename
@@ -78,24 +82,30 @@ async def upload_pdf(
         for _, page in enumerate(reader.pages):  # Use enumerate for iteration
             pdf_text += reader.pages[page].extract_text()
 
-        with open(tmp_file_path, 'w', encoding='utf-8') as f:
+        with open(tmp_file_path, "w", encoding="utf-8") as f:
             f.write(pdf_text)
 
         logger.info("PDF text extracted and saved to %s", tmp_file_path)
 
     except Exception as e:
         logger.exception("Failed to process PDF")
-        raise HTTPException(status_code=500, detail=f"Failed to process PDF: {str(e)}") from e
+        raise HTTPException(
+            status_code=500, detail=f"Failed to process PDF: {str(e)}"
+        ) from e
 
     collection_name = uuid.uuid4().hex
     try:
-        embedder = OpenEmbedder(vectordb_name=vector_db_name, collection_name=collection_name)
+        embedder = OpenEmbedder(
+            vectordb_name=vector_db_name, collection_name=collection_name
+        )
         embedder.create_database(str(tmp_file_path))
         logger.info("Database created for collection: %s", collection_name)
 
     except Exception as e:
         logger.exception("Failed to create database")
-        raise HTTPException(status_code=500, detail=f"Failed to create database: {str(e)}") from e
+        raise HTTPException(
+            status_code=500, detail=f"Failed to create database: {str(e)}"
+        ) from e
 
     finally:
         if tmp_file_path.exists():
@@ -107,13 +117,16 @@ async def upload_pdf(
 
 # API: Start chat with collection
 @app.post("/chat")
-async def start_chat(collection_name: str,
-                     query: str,
-                     model_name: str,
-                     vector_db_name: str):
+async def start_chat(
+    collection_name: str, query: str, model_name: str, vector_db_name: str
+):
     logger.info(
-        '''Chat request received for collection: %s,
-         model: %s, vector DB: %s''', collection_name, model_name, vector_db_name)
+        """Chat request received for collection: %s,
+         model: %s, vector DB: %s""",
+        collection_name,
+        model_name,
+        vector_db_name,
+    )
 
     if not query.strip():
         logger.error("Received an empty query")
@@ -128,7 +141,9 @@ async def start_chat(collection_name: str,
         raise HTTPException(status_code=400, detail="Invalid model name")
 
     try:
-        embedder = OpenEmbedder(vectordb_name=vector_db_name, collection_name=collection_name)
+        embedder = OpenEmbedder(
+            vectordb_name=vector_db_name, collection_name=collection_name
+        )
         llm = OpenLLM(model_name=model_name)
         hybrid_result = embedder.query_database(query=query, k=3)
         results = "\n".join([h.page_content for h in hybrid_result])
@@ -173,4 +188,5 @@ async def start_chat(collection_name: str,
     except Exception as e:
         logger.exception("Failed to process chat request")
         raise HTTPException(
-            status_code=500, detail=f"Failed to process chat request: {str(e)}") from e
+            status_code=500, detail=f"Failed to process chat request: {str(e)}"
+        ) from e

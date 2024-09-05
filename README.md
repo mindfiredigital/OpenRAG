@@ -27,7 +27,7 @@ enabling users to interact with and query their data using different AI models a
 
 ## Features
 
-- ### Support for All Open-Source LLM Models: 
+- ### Support for All Open-Source LLM Models:
   - The application is built with comprehensive support for all major open-source LLMs. This allows users to select from a wide range of models, ensuring they can choose the one that best fits their specific needs and use cases.
 - ### Integration with Multiple Open Source and Free to use Vector Databases:
   - The application currently supports three popular vector databases—Chroma, FAISS, and Qdrant—with plans to expand this list further. This feature enables users to leverage different indexing and search capabilities, enhancing the efficiency and accuracy of information retrieval within their data.

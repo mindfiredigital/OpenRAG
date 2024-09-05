@@ -1,7 +1,8 @@
 import gpt4all
 
+
 class OpenLLM:
-    def __init__(self, model_name: str = 'orca-mini-3b-gguf2-q4_0.gguf',device='cpu'):
+    def __init__(self, model_name: str = "orca-mini-3b-gguf2-q4_0.gguf", device="cpu"):
         """_summary_
 
         Args:
@@ -10,10 +11,9 @@ class OpenLLM:
                                         Defaults to 'orca-mini-3b-gguf2-q4_0.gguf'.
         """
 
-
         self.model = gpt4all.GPT4All(model_name=model_name, device=device)
 
-    def list_models(self)->list[dict]:
+    def list_models(self) -> list[dict]:
         """return list of model supported by gpt4all with its description
 
         Returns:
@@ -21,7 +21,7 @@ class OpenLLM:
         """
         return gpt4all.GPT4All.list_models()
 
-    def generate_response(self, prompt: str, max_tokens: int = 3000)->str:
+    def generate_response(self, prompt: str, max_tokens: int = 3000) -> str:
         """
         Generates a response from the selected LLM based on the given prompt.
 
@@ -29,7 +29,7 @@ class OpenLLM:
         ----------
         prompt : str
             The input text prompt to generate a response for.
-        
+
         max_tokens : int, optional
             The maximum number of tokens to generate. Default is 150.
 

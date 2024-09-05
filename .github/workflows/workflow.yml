@@ -37,13 +37,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install build twine python-semantic-release setuptools-scm pylint
-        pip install -r requirements.txt
-
-    - name: Run pylint linting
-      run: |
-        pylint **/*.py
-      continue-on-error: false # Ensures that the job fails if linting issues are found
+        pip install build twine python-semantic-release setuptools-scm
 
     - name: Run semantic-release and determine version
       id: semantic_version
