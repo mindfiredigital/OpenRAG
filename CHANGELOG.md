@@ -1,6 +1,22 @@
 # CHANGELOG
 
+## v0.1.5 (2024-09-05)
+
+### Fix
+
+* fix: add requirements file ([`0038701`](https://github.com/mindfiredigital/open-rag/commit/0038701d2f518927f8a52a12aa2e696b5f7f11c4))
+
+* fix: add dependency ([`aaa9d53`](https://github.com/mindfiredigital/open-rag/commit/aaa9d533bb58d40466606c2c1656a2df75c44e17))
+
+### Unknown
+
+* Merge branch &#39;master&#39; of https://github.com/mindfiredigital/open-rag ([`92f1b41`](https://github.com/mindfiredigital/open-rag/commit/92f1b4143c4b93f1f0770d3bb7338e11b6048f67))
+
 ## v0.1.4 (2024-09-05)
+
+### Fix
+
+* fix: add pylint ([`cd8ab7b`](https://github.com/mindfiredigital/open-rag/commit/cd8ab7bbab82b318aecf93c2e97eb1549bdb10e0))
 
 ### Unknown
 
