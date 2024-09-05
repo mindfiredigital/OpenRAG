@@ -1,8 +1,22 @@
 # CHANGELOG
 
+## v0.1.6 (2024-09-05)
+
+### Fix
+
+* fix: remove commit condition ([`9c49e9b`](https://github.com/mindfiredigital/open-rag/commit/9c49e9b4aec7c413b1625769d9d77008a2e2880b))
+
+* fix: update commit message format ([`a371dc3`](https://github.com/mindfiredigital/open-rag/commit/a371dc3558e00a97c8b7459903fad27ce6214184))
+
+### Unknown
+
+* Merge branch &#39;master&#39; of https://github.com/mindfiredigital/open-rag ([`6b7e180`](https://github.com/mindfiredigital/open-rag/commit/6b7e1805f34f71cc76fafd29757f9609aabdbaf1))
+
 ## v0.1.5 (2024-09-05)
 
 ### Fix
+
+* fix: add commit message check ([`f31ea54`](https://github.com/mindfiredigital/open-rag/commit/f31ea54c9c92f1e2d02c6bd903b2b64a689ba104))
 
 * fix: add requirements file ([`0038701`](https://github.com/mindfiredigital/open-rag/commit/0038701d2f518927f8a52a12aa2e696b5f7f11c4))
 
