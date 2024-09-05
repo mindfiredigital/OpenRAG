@@ -52,10 +52,10 @@ jobs:
         VERSION=$(git describe --tags --abbrev=0)
         echo "VERSION=$VERSION" >> $GITHUB_ENV
 
-    - name: Create and push version tag
-      run: |
-        git tag -a "$VERSION" -m "Release $VERSION"
-        git push origin --tags
+    # - name: Create and push version tag
+    #   run: |
+    #     git tag -a "$VERSION" -m "Release $VERSION"
+    #     git push origin --tags
 
     - name: Raise PR from master to main
       uses: peter-evans/create-pull-request@v5
