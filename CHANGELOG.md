@@ -1,8 +1,22 @@
 # CHANGELOG
 
+## v0.1.7 (2024-09-05)
+
+### Fix
+
+* fix: update pylint ([`9261382`](https://github.com/mindfiredigital/open-rag/commit/9261382a28b10181b30d8f56b7ad6cc8d141d4c7))
+
+* fix: add pylint ([`03f10f6`](https://github.com/mindfiredigital/open-rag/commit/03f10f6ddf73dca674fa88530cb440cd8354243a))
+
+### Unknown
+
+* Merge branch &#39;master&#39; of https://github.com/mindfiredigital/open-rag ([`948dfd6`](https://github.com/mindfiredigital/open-rag/commit/948dfd615b0be2e2600bbc5107c989b5e720431c))
+
 ## v0.1.6 (2024-09-05)
 
 ### Fix
+
+* fix: add pre-commit package ([`131deab`](https://github.com/mindfiredigital/open-rag/commit/131deab9420199e0caa0ae0d0319def9a0c324be))
 
 * fix: remove commit condition ([`9c49e9b`](https://github.com/mindfiredigital/open-rag/commit/9c49e9b4aec7c413b1625769d9d77008a2e2880b))
 
