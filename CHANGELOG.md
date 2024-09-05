@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.1.3 (2024-09-05)
+
+### Fix
+
+* fix: comment version tag ([`61ef06a`](https://github.com/mindfiredigital/open-rag/commit/61ef06a8076cd1a8bde1ca38c000585f9e4b9ac8))
+
 ## v0.1.2 (2024-09-05)
 
 ### Unknown
