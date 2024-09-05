@@ -21,6 +21,16 @@ jobs:
         ref: main
         fetch-depth: 0
 
+    # Step to validate commit message
+    - name: Check commit message format
+      run: |
+        COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+        if [[ ! "$COMMIT_MESSAGE" =~ ^(fix|feat|chore|docs|style|refactor|test|perf|ci|build)\((.*)\):\ (.*) ]]; then
+          echo "Invalid commit message format."
+          echo "Commit message should follow the Conventional Commits format."
+          exit 1
+        fi
+
     - name: Create and push to master
       run: |
         git checkout -b master
