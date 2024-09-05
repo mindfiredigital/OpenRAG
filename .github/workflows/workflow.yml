@@ -25,7 +25,7 @@ jobs:
     - name: Check commit message format
       run: |
         COMMIT_MESSAGE=$(git log -1 --pretty=%B)
-        if [[ ! "$COMMIT_MESSAGE" =~ ^(fix|feat|chore|docs|style|refactor|test|perf|ci|build)\((.*)\):\ (.*) ]]; then
+        if [[ ! "$COMMIT_MESSAGE" =~ ^(fix|feat|chore|docs|style|refactor|test|perf|ci|build)(\([a-zA-Z0-9_\- ]+\))?:\ (.+) ]]; then
           echo "Invalid commit message format."
           echo "Commit message should follow the Conventional Commits format."
           exit 1
