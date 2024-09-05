@@ -1,0 +1,67 @@
+name: Upload Python Package
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  id-token: write
+  actions: write
+  packages: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout master branch
+      uses: actions/checkout@v4
+      with:
+        ref: main
+        fetch-depth: 0
+
+    - name: Create and push to master
+      run: |
+        git checkout -b master
+        git push origin master
+
+    - name: Checkout release branch
+      run: git checkout master
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build twine python-semantic-release setuptools-scm
+
+    - name: Run semantic-release
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        semantic-release version
+    
+    - name: Get version and create tag
+      id: get_version
+      run: |
+        VERSION=$(python -m semantic_release version --current-version)
+        echo "VERSION=$VERSION" >> $GITHUB_ENV
+        git tag -a "v$VERSION" -m "Release $VERSION"
+        git push origin --tags
+
+    - name: Raise PR from master to main
+      uses: peter-evans/create-pull-request@v5
+      with:
+        base: main
+        head: master
+        title: 'Release PR: master -> main'
+        body: 'This PR merges the changes from the master branch back into main after the release.'
+        branch: pr-master-to-main  
+
+  
