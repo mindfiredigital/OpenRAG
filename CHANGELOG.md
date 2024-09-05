@@ -1,8 +1,16 @@
 # CHANGELOG
 
+## v0.1.4 (2024-09-05)
+
+### Unknown
+
+* Merge branch &#39;master&#39; of https://github.com/mindfiredigital/open-rag ([`003ae7f`](https://github.com/mindfiredigital/open-rag/commit/003ae7f285261b13095f546e79b4416524f391c3))
+
 ## v0.1.3 (2024-09-05)
 
 ### Fix
+
+* fix: comment pr part ([`f7f22b3`](https://github.com/mindfiredigital/open-rag/commit/f7f22b3618ca176fe4d4393f3eeeba1dafa40af7))
 
 * fix: comment version tag ([`61ef06a`](https://github.com/mindfiredigital/open-rag/commit/61ef06a8076cd1a8bde1ca38c000585f9e4b9ac8))
 
