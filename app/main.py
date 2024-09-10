@@ -3,12 +3,14 @@ import uuid
 from pathlib import Path
 import logging
 from fastapi import FastAPI, File, UploadFile, HTTPException, Form
+from fastapi.middleware.cors import CORSMiddleware
 import PyPDF2
 
 from Openllm import OpenLLM
 from constant import VECTOR_DB_LIST, LLM_OPTIONS, MODEL_LIST
 from schemas import UploadResponse
 from Openembedder import OpenEmbedder
+from utils import chat_histories, manage_chat_history, preprocess_text
 
 # Set up logging
 log_file_path = "app.log"
@@ -20,6 +22,15 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Open RAG", version="0.1")
+
+# Configure CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # List of allowed origins, you can use ["*"] to allow all
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods: GET, POST, etc.
+    allow_headers=["*"],  # Allow all headers
+)
 
 session_histories = {}
 MAX_TOKENS = 4000
@@ -80,7 +91,7 @@ async def upload_pdf(
         pdf_text = ""
         reader = PyPDF2.PdfReader(file.file)
         for _, page in enumerate(reader.pages):  # Use enumerate for iteration
-            pdf_text += reader.pages[page].extract_text()
+            pdf_text += page.extract_text()
 
         with open(tmp_file_path, "w", encoding="utf-8") as f:
             f.write(pdf_text)
@@ -115,11 +126,38 @@ async def upload_pdf(
     return UploadResponse(collection_name=collection_name)
 
 
+@app.get("/check-collection")
+async def check_collection(collection_name: str, vector_db_name: str):
+    logger.info(
+        """Collection check request received for collection: %s,
+         vector DB: %s""",
+        collection_name,
+        vector_db_name,
+    )
+    if vector_db_name not in VECTOR_DB_LIST:
+        logger.error("Invalid vector database name: %s", vector_db_name)
+        raise HTTPException(status_code=400, detail="Invalid vector database name")
+
+    try:
+        OpenEmbedder(vectordb_name=vector_db_name, collection_name=collection_name)
+        return {"message": "Validated"}
+    except Exception as e:
+        logger.exception("Failed to validate collection")
+        raise HTTPException(
+            status_code=400, detail=f"Failed to validate collection: {str(e)}"
+        ) from e
+
+
 # API: Start chat with collection
 @app.post("/chat")
 async def start_chat(
     collection_name: str, query: str, model_name: str, vector_db_name: str
 ):
+    session_id = collection_name
+
+    if session_id not in chat_histories:
+        chat_histories[session_id] = []
+
     logger.info(
         """Chat request received for collection: %s,
          model: %s, vector DB: %s""",
@@ -149,22 +187,18 @@ async def start_chat(
         results = "\n".join([h.page_content for h in hybrid_result])
         logger.info("Query results retrieved for collection: %s", collection_name)
 
-        # Retrieve or initialize chat history
-        # history = session_histories.get(collection_name, "")
+        chat_histories[session_id].append({"role": "user", "content": query})
+        manage_chat_history(session_id)
 
-        # Format the prompt with history, context, and current query
-        # new_interaction = f"User: {query}\nAI: {results}\n"
-        # combined_prompt = f"{history}"
-
-        # Trim history if the prompt exceeds MAX_TOKENS
-        # while len(combined_prompt) > MAX_TOKENS:
-        #     first_interaction_end = combined_prompt.find("AI: ") + len("AI: ")
-        #     combined_prompt = combined_prompt[first_interaction_end:]
-
-        # Store updated history back to the session
-        # session_histories[collection_name] = combined_prompt
+        # Create the prompt including the chat history
+        history_prompt = "\n".join(
+            [f'{msg["role"]}: {msg["content"]}' for msg in chat_histories[session_id]]
+        )
 
         final_prompt = f"""
+            Chat History:
+            {history_prompt}
+
             Context:
             {results}
 
@@ -182,7 +216,10 @@ async def start_chat(
 
         llm_result = llm.generate_response(final_prompt)
         logger.info("LLM Response: %s", llm_result)
-
+        processed_text = preprocess_text(llm_result)
+        chat_histories[session_id].append(
+            {"role": "assistant", "content": processed_text}
+        )
         return {"response": llm_result}
 
     except Exception as e:

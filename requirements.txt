@@ -23,3 +23,5 @@ python-multipart
 python-semantic-release
 pylint
 pre-commit
+nltk
+spacy

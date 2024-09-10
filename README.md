@@ -58,6 +58,7 @@ Provide detailed installation steps using code blocks to show commands or config
   - Clone the repo
   - Create virtualenv
   - Install requirements using requirements.txt ``pip install -r requirements.txt``
+  - Run this command to download spacy stuffs ``python3 -m spacy download en_core_web_sm``
   - Run the application using command ``uvicorn main:app``
 
 ## Usage
