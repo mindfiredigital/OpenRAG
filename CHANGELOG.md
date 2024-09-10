@@ -1,6 +1,16 @@
 # CHANGELOG
 
+## v0.2.0 (2024-09-10)
+
+### Unknown
+
+* Merge branch &#39;master&#39; of https://github.com/mindfiredigital/open-rag ([`549bd7e`](https://github.com/mindfiredigital/open-rag/commit/549bd7e00442561994e9d2e436decb621b488fd0))
+
 ## v0.1.7 (2024-09-05)
+
+### Feature
+
+* feat: Add chat hostory and response lemmatisation ([`2075864`](https://github.com/mindfiredigital/open-rag/commit/2075864f839424878cfc20b483492948fb0a1a05))
 
 ### Fix
 
