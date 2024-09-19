@@ -1,6 +1,6 @@
 # OpenRAG
 
-![Project Logo](url_to_your_project_logo) <!-- Include a project logo or banner here, if applicable -->
+<img src="./OpenRAGLogo.png" alt="Project Logo" width="100" height="auto">
 
 Short project description goes here.
 
