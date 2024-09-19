@@ -25,3 +25,6 @@ pylint
 pre-commit
 nltk
 spacy
+mkdocs
+mkdocstrings[python]
+mkdocs-material

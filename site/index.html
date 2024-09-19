@@ -1,0 +1,521 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+
+
+
+
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+
+
+
+        <title>OpenRAG</title>
+
+
+
+      <link rel="stylesheet" href="assets/stylesheets/main.35f28582.min.css">
+
+
+
+
+
+
+
+
+
+
+
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+
+
+
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+
+
+
+
+
+
+  </head>
+
+
+    <body dir="ltr">
+
+
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+
+
+        <a href="#openrag" class="md-skip">
+          Skip to content
+        </a>
+
+    </div>
+    <div data-md-component="announce">
+
+    </div>
+
+
+
+
+
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="OpenRAG" class="md-header__button md-logo" aria-label="OpenRAG" data-md-component="logo">
+
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenRAG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+
+              OpenRAG
+
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+
+
+
+
+  </nav>
+
+</header>
+
+    <div class="md-container" data-md-component="container">
+
+
+
+
+
+
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+
+
+
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="OpenRAG" class="md-nav__button md-logo" aria-label="OpenRAG" data-md-component="logo">
+
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    OpenRAG
+  </label>
+
+  <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+    <li class="md-nav__item">
+      <a href="API/" class="md-nav__link">
+
+
+  <span class="md-ellipsis">
+    API Endpoints
+  </span>
+
+
+      </a>
+    </li>
+
+
+
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+
+
+
+
+
+
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+
+    <nav class="md-nav" aria-label="Features">
+      <ul class="md-nav__list">
+
+          <li class="md-nav__item">
+  <a href="#support-for-all-open-source-llm-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Support for All Open-Source LLM Models:
+    </span>
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#integration-with-multiple-open-source-and-free-to-use-vector-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration with Multiple Open Source and Free to use Vector Databases:
+    </span>
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#pdf-file-upload-and-data-querying" class="md-nav__link">
+    <span class="md-ellipsis">
+      PDF File Upload and Data Querying:
+    </span>
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#persistent-collection-names-for-reusability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Persistent Collection Names for Reusability:
+    </span>
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#consistency-in-vector-database-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consistency in Vector Database Usage:
+    </span>
+  </a>
+
+</li>
+
+      </ul>
+    </nav>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+
+</li>
+
+      </ul>
+    </nav>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#api-hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Hosting
+    </span>
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#api-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Documentation
+    </span>
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributing
+    </span>
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      License
+    </span>
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acknowledgments
+    </span>
+  </a>
+
+</li>
+
+    </ul>
+
+</nav>
+                  </div>
+                </div>
+              </div>
+
+
+
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+
+
+
+
+<h1 id="openrag">OpenRAG</h1>
+<p><img alt="Project Logo" src="url_to_your_project_logo" /> <!-- Include a project logo or banner here, if applicable --></p>
+<p>Short project description goes here.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#OpenRAG">OpenRAG</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#description">Description</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#getting-started">Getting Started</a><ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#installation">Installation</a></li>
+</ul>
+</li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#acknowledgments">Acknowledgments</a></li>
+</ul>
+<h2 id="description">Description</h2>
+<p>An open-source Generative AI (GenAI) application designed to provide
+users with the flexibility and power to work with various open-source
+large language models (LLMs). This application serves as a versatile tool,
+enabling users to interact with and query their data using different AI models and vector databases.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>
+<h3 id="support-for-all-open-source-llm-models">Support for All Open-Source LLM Models:</h3>
+</li>
+<li>The application is built with comprehensive support for all major open-source LLMs. This allows users to select from a wide range of models, ensuring they can choose the one that best fits their specific needs and use cases.</li>
+<li>
+<h3 id="integration-with-multiple-open-source-and-free-to-use-vector-databases">Integration with Multiple Open Source and Free to use Vector Databases:</h3>
+</li>
+<li>The application currently supports three popular vector databases—Chroma, FAISS, and Qdrant—with plans to expand this list further. This feature enables users to leverage different indexing and search capabilities, enhancing the efficiency and accuracy of information retrieval within their data.</li>
+<li>
+<h3 id="pdf-file-upload-and-data-querying">PDF File Upload and Data Querying:</h3>
+</li>
+<li>Users can easily upload their PDF files to the application. Once uploaded, they can select their preferred LLM and vector database to create a collection. This collection serves as a structured repository of the uploaded data, which users can then query to extract insights or generate responses based on the content of the PDF.</li>
+<li>
+<h3 id="persistent-collection-names-for-reusability">Persistent Collection Names for Reusability:</h3>
+</li>
+<li>Upon uploading a PDF, the application generates a unique collection name. This name is crucial as it allows users to reference their data in future sessions without needing to re-upload the PDF. Users can simply choose the previously generated collection name, along with any LLM and vector database of their choice, to query the same data seamlessly.</li>
+<li>
+<h3 id="consistency-in-vector-database-usage">Consistency in Vector Database Usage:</h3>
+</li>
+<li>The vector database selected during the PDF upload process is tightly coupled with the data collection. When querying the data, the application ensures that only the initially chosen vector database is used. Attempting to switch to a different vector database for querying will result in an error, maintaining consistency and accuracy in data retrieval.</li>
+</ul>
+<p>List the key features of your project.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>Instructions on how to get started with your project, including installation, prerequisites, and basic usage.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>API Understanding</li>
+<li>Make sure to have python version 3.9 or greater</li>
+<li>Qdrant docker image should be running <a href="https://qdrant.tech/documentation/quickstart/">Qdrant Start</a></li>
+<li>Check the port 6333 on localhost is accesible</li>
+</ul>
+<h3 id="installation">Installation</h3>
+<p>Provide detailed installation steps using code blocks to show commands or configuration files.
+  - Clone the repo
+  - Create virtualenv
+  - Install requirements using requirements.txt <code>pip install -r requirements.txt</code>
+  - Run this command to download spacy stuffs <code>python3 -m spacy download en_core_web_sm</code>
+  - Run the application using command <code>uvicorn main:app</code></p>
+<h3 id="usage">Usage</h3>
+<p>The application is API-first and can be integrated with various frontend tools. The primary use cases include:
+  - Uploading a PDF and querying the content through a selected LLM model and vector database.
+  - Retrieving previously created collections for querying data.
+  - Switching between supported LLMs and vector databases for different sessions.</p>
+<p>### Example API Usage:</p>
+<p>```
+  curl -X POST "https://example.com/upload" \
+  -H "accept: application/json" \
+  -H "Content-Type: multipart/form-data" \
+  -F "file=@yourfile.pdf" \
+  -F "model_name=GPT-3.5" \
+  -F "vector_db_name=Qdrant"</p>
+<p>```</p>
+<h2 id="api-hosting">API Hosting</h2>
+<p>This API can be hosted on your local machine or deployed to a production server. Once hosted, you can access and expose the API endpoints for your applications.</p>
+<ul>
+<li><strong>Local Hosting:</strong> You can run the application using uvicorn for local development and testing.</li>
+<li><strong>Production Hosting:</strong> For production environments, you can use tools like Docker, Kubernetes, or a cloud provider to scale the API. Consider using a WSGI/ASGI server like Gunicorn for production-grade performance.</li>
+</ul>
+<p>Check the API using Swagger UI by visiting <code>https://example.com/docs</code> or <code>https://example.com/openapi.json</code> after running the application.</p>
+<h2 id="api-documentation">API Documentation</h2>
+<p>A complete API demo, including the frontend, is available at this <a href="https://codesandbox.io/p/github/abdulla-mindfire/open-rag-fe/draft/trusting-bessie?workspaceId=5ad40487-5374-4afd-9f20-42fc5cdfef2a">Link</a>. The detailed API documentation, which includes all endpoints, parameters, and expected responses, can be found in the <a href="API/">API.md</a> file.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Guidelines for contributing to the project. Provide information on how users can contribute, submit issues, or make pull requests.
+Add link to CONTRIBUTING.md file.</p>
+<h2 id="license">License</h2>
+<p>This project is licensed under the MIT license - see LICENSE.md for details.</p>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>Give credit to any resources or individuals whose work or support has been instrumental to your project.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </article>
+            </div>
+
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+
+      </main>
+
+        <footer class="md-footer">
+
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+
+
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+
+</div>
+
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+
+
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+
+
+      <script src="assets/javascripts/bundle.56dfad97.min.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,10 @@
+site_name: OpenRAG
+
+theme:
+  name: "material"
+
+plugins:
+  - mkdocstrings
+
+nav:
+  - API Endpoints: API.md
