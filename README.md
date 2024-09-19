@@ -61,9 +61,37 @@ Provide detailed installation steps using code blocks to show commands or config
   - Run this command to download spacy stuffs ``python3 -m spacy download en_core_web_sm``
   - Run the application using command ``uvicorn main:app``
 
-## Usage
+### Usage
 
-Explain how to use your project, provide examples, and showcase specific use cases.
+The application is API-first and can be integrated with various frontend tools. The primary use cases include:
+  - Uploading a PDF and querying the content through a selected LLM model and vector database.
+  - Retrieving previously created collections for querying data.
+  - Switching between supported LLMs and vector databases for different sessions.
+
+  ### Example API Usage:
+
+  ```
+  curl -X POST "https://example.com/upload" \
+  -H "accept: application/json" \
+  -H "Content-Type: multipart/form-data" \
+  -F "file=@yourfile.pdf" \
+  -F "model_name=GPT-3.5" \
+  -F "vector_db_name=Qdrant"
+
+  ```
+
+## API Hosting
+
+This API can be hosted on your local machine or deployed to a production server. Once hosted, you can access and expose the API endpoints for your applications.
+
+  - **Local Hosting:** You can run the application using uvicorn for local development and testing.
+  - **Production Hosting:** For production environments, you can use tools like Docker, Kubernetes, or a cloud provider to scale the API. Consider using a WSGI/ASGI server like Gunicorn for production-grade performance.
+
+  Check the API using Swagger UI by visiting ``https://example.com/docs`` or ``https://example.com/openapi.json`` after running the application.
+
+## API Documentation
+
+A complete API demo, including the frontend, is available at this [Link](https://codesandbox.io/p/github/abdulla-mindfire/open-rag-fe/draft/trusting-bessie?workspaceId=5ad40487-5374-4afd-9f20-42fc5cdfef2a). The detailed API documentation, which includes all endpoints, parameters, and expected responses, can be found in the [API.md](API.md) file.
 
 ## Contributing
 
