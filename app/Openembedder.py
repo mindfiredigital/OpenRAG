@@ -69,6 +69,14 @@ class OpenEmbedder:
         self.vectordb = self._initialize_vectordb()
 
     def _get_persist_dirname(self) -> str:
+        """
+        Returns the appropriate directory name for the vector database based
+        on the vector database name.
+
+        Returns:
+            str: The directory path where the vector database should persist data.
+        """
+
         if self.vectordb_name == "chromadb":
             return "./chromadb_store"
         if self.vectordb_name == "faiss":
@@ -86,6 +94,22 @@ class OpenEmbedder:
         return len(self.embeddings.embed_query("hello world"))
 
     def _initialize_vectordb(self):
+        """
+        Initializes the vector database based on the selected vector database
+        name (ChromaDB, Qdrant, or FAISS).
+
+        If the vector database is Qdrant, it checks for existing collections and
+        creates a new one if necessary.
+        If the vector database is FAISS, it attempts to load a local FAISS index file.
+
+        Raises:
+            ValueError: If an unsupported vector database is specified or if an error
+            occurs during the initialization of Qdrant.
+
+        Returns:
+            Vector database instance: An instance of the vector database
+            (Chroma, QdrantVectorStore, or FAISS).
+        """
 
         if self.vectordb_name == "chromadb":
             vectordb = Chroma(
@@ -144,6 +168,16 @@ class OpenEmbedder:
         return vectordb
 
     def extract_text_from_pdf(self, pdf_file):
+        """
+        Extracts text from a PDF file using the PyPDF2 library.
+
+        Args:
+            pdf_file: The PDF file to extract text from.
+
+        Returns:
+            str: The extracted text from the PDF file.
+        """
+
         reader = PyPDF2.PdfReader(pdf_file)
         text = ""
         for _, page in enumerate(reader.pages):  # Use enumerate for iteration
@@ -151,6 +185,18 @@ class OpenEmbedder:
         return text
 
     def create_database(self, text_file_path: str):
+        """
+        Creates a vector database by loading and splitting documents from a
+        text file, then adding them to the vector database.
+
+        Supports FAISS, ChromaDB, and Qdrant vector databases.
+
+        Args:
+            text_file_path (str): The path to the text file containing the documents.
+
+        Raises:
+            ValueError: If the specified vector database is unsupported.
+        """
 
         # Load and split the document
         loader = TextLoader(text_file_path, encoding="utf-8")
@@ -191,5 +237,17 @@ class OpenEmbedder:
             raise ValueError(f"Unsupported vector database: {self.vectordb_name}")
 
     def query_database(self, query: str, k: int = 5):
+        """
+        Queries the vector database using the provided query string and returns
+        the top-k results based on similarity search.
+
+        Args:
+            query (str): The query string to search for.
+            k (int): The number of results to return (default is 5).
+
+        Returns:
+            List: A list of the top-k similar results from the vector database.
+        """
+
         results = self.vectordb.similarity_search(query, k=k)
         return results

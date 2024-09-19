@@ -21,7 +21,11 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title="Open RAG", version="0.1")
+app = FastAPI(
+    title="Open RAG",
+    description="An API for managing LLM operations, file uploads, and chat functionalities.",
+    version="0.1",
+)
 
 # Configure CORS
 app.add_middleware(
@@ -40,25 +44,67 @@ tmp_dir = Path("tmp")
 tmp_dir.mkdir(parents=True, exist_ok=True)
 
 
-@app.get("/")
+@app.get("/", summary="Hello API", description="Returns a basic 'Hello' message.")
 def hello_api():
+    """
+    Endpoint to return a basic greeting message.
+
+    This is a simple GET request that returns a basic 'Hello FastAPI' message.
+
+    Returns:
+        dict: A dictionary containing a greeting message.
+    """
+
     logger.info("Hello API called")
-    return {"msg": "Hello FastAPI🚀"}
+    return {"msg": "Hello OpenRAG"}
 
 
-@app.get("/llm-options")
+@app.get(
+    "/llm-options",
+    summary="Get LLM Options",
+    description="Retrieves the available options for Large Language Models (LLM).",
+)
 async def get_llm_options():
+    """
+    Endpoint to retrieve available Large Language Models (LLM) options.
+
+    Returns:
+        dict: A dictionary of LLM options available for users.
+    """
+
     logger.info("Fetching LLM options")
     return LLM_OPTIONS
 
 
 # API: upload file and get collection to chat
-@app.post("/upload", response_model=UploadResponse)
+@app.post(
+    "/upload",
+    summary="Upload PDF",
+    description="""Allows for uploading a PDF file, which will be
+    processed and stored in the vector database.""",
+    response_model=UploadResponse,
+)
 async def upload_pdf(
     model_name: str = Form(...),
     vector_db_name: str = Form(...),
     file: UploadFile = File(...),
 ):
+    """
+    Upload a PDF file for processing and storing in the vector database.
+
+    Args:
+        model_name (str): The name of the Large Language Model (LLM) to be used.
+        vector_db_name (str): The vector database in which the PDF will be stored.
+        file (UploadFile): The uploaded PDF file.
+
+    Returns:
+        UploadResponse: A response object containing the generated collection name.
+
+    Raises:
+        HTTPException: Raised if the file is not a PDF, the file size exceeds 10 MB,
+        or the vector DB/model name is invalid.
+    """
+
     logger.info(
         "Upload request received for model: %s and vector DB: %s",
         model_name,
@@ -126,8 +172,27 @@ async def upload_pdf(
     return UploadResponse(collection_name=collection_name)
 
 
-@app.get("/check-collection")
+@app.get(
+    "/check-collection",
+    summary="Check Collection",
+    description="Verifies if a specific collection exists in the vector database.",
+)
 async def check_collection(collection_name: str, vector_db_name: str):
+    """
+    Verifies if a collection exists in the specified vector database.
+
+    Args:
+        collection_name (str): The name of the collection to check.
+        vector_db_name (str): The vector database in which to check the collection.
+
+    Returns:
+        dict: A message indicating whether the collection is validated.
+
+    Raises:
+        HTTPException: Raised if the vector database name is invalid or if the
+        collection cannot be validated.
+    """
+
     logger.info(
         """Collection check request received for collection: %s,
          vector DB: %s""",
@@ -149,10 +214,31 @@ async def check_collection(collection_name: str, vector_db_name: str):
 
 
 # API: Start chat with collection
-@app.post("/chat")
+@app.post(
+    "/chat",
+    summary="Start Chat",
+    description="Initiates a chat based on the provided collection and query.",
+)
 async def start_chat(
     collection_name: str, query: str, model_name: str, vector_db_name: str
 ):
+    """
+    Initiates a chat session with a specific collection and processes the query.
+
+    Args:
+        collection_name (str): The collection name that has been uploaded.
+        query (str): The user's query to search against the collection.
+        model_name (str): The Large Language Model (LLM) to be used.
+        vector_db_name (str): The vector database being used for the collection.
+
+    Returns:
+        dict: The assistant's response based on the query and the context from the collection.
+
+    Raises:
+        HTTPException: Raised if the query is empty, vector database or model name is invalid,
+        or an error occurs during processing.
+    """
+
     session_id = collection_name
 
     if session_id not in chat_histories:
