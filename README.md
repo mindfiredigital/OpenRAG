@@ -6,7 +6,7 @@ Short project description goes here.
 
 ## Table of Contents
 
-- [OpenRAG](#open-rag)
+- [OpenRAG](#OpenRAG)
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
   - [Features](#features)
