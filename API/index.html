@@ -1,0 +1,805 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+    
+    
+      
+        <title>API Endpoints - OpenRAG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#openrag-api-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="OpenRAG" class="md-header__button md-logo" aria-label="OpenRAG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenRAG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Endpoints
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="OpenRAG" class="md-nav__button md-logo" aria-label="OpenRAG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    OpenRAG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    API Endpoints
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    API Endpoints
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version: 0.1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version: 0.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-hello-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Hello API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-get-llm-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Get LLM Options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-upload-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Upload PDF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-check-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Check Collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-start-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Start Chat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schemas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schemas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-body_upload_pdf_upload_post" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Body_upload_pdf_upload_post
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-uploadresponse" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. UploadResponse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-httpvalidationerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. HTTPValidationError
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-validationerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. ValidationError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response Codes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version: 0.1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version: 0.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-hello-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Hello API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-get-llm-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Get LLM Options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-upload-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Upload PDF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-check-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Check Collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-start-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Start Chat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schemas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schemas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-body_upload_pdf_upload_post" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Body_upload_pdf_upload_post
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-uploadresponse" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. UploadResponse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-httpvalidationerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. HTTPValidationError
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-validationerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. ValidationError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response Codes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="openrag-api-documentation">OpenRAG API Documentation</h1>
+<h2 id="version-01">Version: 0.1</h2>
+<h3 id="overview"><strong>Overview</strong></h3>
+<p>The OpenRAG API allows for interaction with a variety of endpoints to manage LLM (Large Language Model) operations, file uploads, and chat functionalities. This document outlines the available endpoints, parameters, and expected responses.</p>
+<hr />
+<h2 id="endpoints"><strong>Endpoints</strong></h2>
+<h3 id="1-hello-api"><strong>1. Hello API</strong></h3>
+<ul>
+<li><strong>Endpoint:</strong> <code>/</code></li>
+<li><strong>Method:</strong> <code>GET</code></li>
+<li><strong>Summary:</strong> Returns a basic "Hello" message.</li>
+<li><strong>Operation ID:</strong> <code>hello_api__get</code></li>
+<li><strong>Responses:</strong></li>
+<li><strong>200 (Successful Response):</strong><ul>
+<li><strong>Content Type:</strong> <code>application/json</code></li>
+<li><strong>Schema:</strong> An empty schema is defined here, meaning the response body will likely be a simple JSON object like <code>{}</code>.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="2-get-llm-options"><strong>2. Get LLM Options</strong></h3>
+<ul>
+<li><strong>Endpoint:</strong> <code>/llm-options</code></li>
+<li><strong>Method:</strong> <code>GET</code></li>
+<li><strong>Summary:</strong> Retrieves the available options for Large Language Models (LLM).</li>
+<li><strong>Operation ID:</strong> <code>get_llm_options_llm_options_get</code></li>
+<li><strong>Responses:</strong></li>
+<li><strong>200 (Successful Response):</strong><ul>
+<li><strong>Content Type:</strong> <code>application/json</code></li>
+<li><strong>Schema:</strong> An empty schema, indicating the response will contain a simple JSON structure.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="3-upload-pdf"><strong>3. Upload PDF</strong></h3>
+<ul>
+<li><strong>Endpoint:</strong> <code>/upload</code></li>
+<li><strong>Method:</strong> <code>POST</code></li>
+<li><strong>Summary:</strong> Allows for uploading a PDF file.</li>
+<li><strong>Operation ID:</strong> <code>upload_pdf_upload_post</code></li>
+<li><strong>Request Body:</strong></li>
+<li><strong>Content Type:</strong> <code>multipart/form-data</code></li>
+<li><strong>Schema:</strong><ul>
+<li><strong>Body_upload_pdf_upload_post:</strong></li>
+<li><strong>model_name (string, required):</strong> Name of the model to be used.</li>
+<li><strong>vector_db_name (string, required):</strong> Name of the vector database where data will be stored.</li>
+<li><strong>file (string, format: binary, required):</strong> The PDF file to be uploaded.</li>
+</ul>
+</li>
+<li><strong>Responses:</strong></li>
+<li><strong>200 (Successful Response):</strong><ul>
+<li><strong>Content Type:</strong> <code>application/json</code></li>
+<li><strong>Schema:</strong></li>
+<li><strong>UploadResponse:</strong><ul>
+<li><strong>collection_name (string):</strong> Name of the collection that was generated based on the uploaded PDF.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>422 (Validation Error):</strong><ul>
+<li><strong>Content Type:</strong> <code>application/json</code></li>
+<li><strong>Schema:</strong></li>
+<li><strong>HTTPValidationError:</strong><ul>
+<li><strong>detail (array of ValidationError):</strong> Contains details of the validation error.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="4-check-collection"><strong>4. Check Collection</strong></h3>
+<ul>
+<li><strong>Endpoint:</strong> <code>/check-collection</code></li>
+<li><strong>Method:</strong> <code>GET</code></li>
+<li><strong>Summary:</strong> Verifies if a specific collection exists in the vector database.</li>
+<li><strong>Operation ID:</strong> <code>check_collection_check_collection_get</code></li>
+<li><strong>Parameters:</strong></li>
+<li><strong>collection_name (string, required, query):</strong> The name of the collection to check.</li>
+<li><strong>vector_db_name (string, required, query):</strong> The name of the vector database to query.</li>
+<li><strong>Responses:</strong></li>
+<li><strong>200 (Successful Response):</strong><ul>
+<li><strong>Content Type:</strong> <code>application/json</code></li>
+<li><strong>Schema:</strong> An empty schema indicating that the response will be a simple JSON object.</li>
+</ul>
+</li>
+<li><strong>422 (Validation Error):</strong><ul>
+<li><strong>Content Type:</strong> <code>application/json</code></li>
+<li><strong>Schema:</strong></li>
+<li><strong>HTTPValidationError:</strong><ul>
+<li><strong>detail (array of ValidationError):</strong> Contains details of the validation error.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="5-start-chat"><strong>5. Start Chat</strong></h3>
+<ul>
+<li><strong>Endpoint:</strong> <code>/chat</code></li>
+<li><strong>Method:</strong> <code>POST</code></li>
+<li><strong>Summary:</strong> Initiates a chat based on the provided collection and query.</li>
+<li><strong>Operation ID:</strong> <code>start_chat_chat_post</code></li>
+<li><strong>Parameters:</strong></li>
+<li><strong>collection_name (string, required, query):</strong> The name of the collection to be used.</li>
+<li><strong>query (string, required, query):</strong> The query or question to be sent to the model.</li>
+<li><strong>model_name (string, required, query):</strong> The name of the LLM model to use for generating responses.</li>
+<li><strong>vector_db_name (string, required, query):</strong> The name of the vector database where the context resides.</li>
+<li><strong>Responses:</strong></li>
+<li><strong>200 (Successful Response):</strong><ul>
+<li><strong>Content Type:</strong> <code>application/json</code></li>
+<li><strong>Schema:</strong> An empty schema, indicating the response will contain a simple JSON structure.</li>
+</ul>
+</li>
+<li><strong>422 (Validation Error):</strong><ul>
+<li><strong>Content Type:</strong> <code>application/json</code></li>
+<li><strong>Schema:</strong></li>
+<li><strong>HTTPValidationError:</strong><ul>
+<li><strong>detail (array of ValidationError):</strong> Contains details of the validation error.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="components"><strong>Components</strong></h2>
+<h3 id="schemas"><strong>Schemas</strong></h3>
+<h4 id="1-body_upload_pdf_upload_post"><strong>1. Body_upload_pdf_upload_post</strong></h4>
+<ul>
+<li><strong>Type:</strong> <code>object</code></li>
+<li><strong>Properties:</strong></li>
+<li><strong>model_name (string, required):</strong> The name of the model to use for processing the PDF.</li>
+<li><strong>vector_db_name (string, required):</strong> The vector database name where the PDF data will be stored.</li>
+<li><strong>file (string, format: binary, required):</strong> The PDF file to upload.</li>
+</ul>
+<h4 id="2-uploadresponse"><strong>2. UploadResponse</strong></h4>
+<ul>
+<li><strong>Type:</strong> <code>object</code></li>
+<li><strong>Properties:</strong></li>
+<li><strong>collection_name (string, required):</strong> The name of the collection that was generated after the file upload.</li>
+</ul>
+<h4 id="3-httpvalidationerror"><strong>3. HTTPValidationError</strong></h4>
+<ul>
+<li><strong>Type:</strong> <code>object</code></li>
+<li><strong>Properties:</strong></li>
+<li><strong>detail (array of ValidationError):</strong> Detailed error messages if validation fails.</li>
+</ul>
+<h4 id="4-validationerror"><strong>4. ValidationError</strong></h4>
+<ul>
+<li><strong>Type:</strong> <code>object</code></li>
+<li><strong>Properties:</strong></li>
+<li><strong>loc (array of strings or integers):</strong> The location where the error occurred.</li>
+<li><strong>msg (string):</strong> The error message.</li>
+<li><strong>type (string):</strong> The type of error.</li>
+</ul>
+<hr />
+<h3 id="response-codes"><strong>Response Codes</strong></h3>
+<ul>
+<li><strong>200 (Successful Response):</strong> The request was successful, and the response contains the requested data.</li>
+<li><strong>422 (Validation Error):</strong> The request failed due to invalid input parameters. The response will contain details about the validation error.</li>
+</ul>
+<hr />
+<h3 id="notes"><strong>Notes</strong></h3>
+<ul>
+<li>Make sure that when uploading PDFs, the file size and format are properly validated.</li>
+<li>The vector database name and model name are crucial parameters for all operations related to chat and data storage.</li>
+<li>All errors return a detailed message to help debug issues quickly. Ensure you handle <code>422</code> validation errors gracefully in your application logic.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
