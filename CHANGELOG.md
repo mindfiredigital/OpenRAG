@@ -1,6 +1,18 @@
 # CHANGELOG
 
+## v0.3.0 (2024-09-19)
+
+### Unknown
+
+* Merge branch &#39;master&#39; of https://github.com/mindfiredigital/open-rag ([`f9a22c5`](https://github.com/mindfiredigital/open-rag/commit/f9a22c536856ecf3a369cd53e5de377883b86908))
+
 ## v0.2.0 (2024-09-10)
+
+### Feature
+
+* feat: update docstring for methods ([`814c2ab`](https://github.com/mindfiredigital/open-rag/commit/814c2ab30a4434ce48bcfdee9e6d6ce1750d427f))
+
+* feat: update readme and add api docs ([`55f7fbb`](https://github.com/mindfiredigital/open-rag/commit/55f7fbb5d0c099e9b8483715247088714709dbbf))
 
 ### Unknown
 
