@@ -1,4 +1,4 @@
-# Code of Conduct - Open Rag
+# Code of Conduct - OpenRAG
 
 ## Our Pledge
 

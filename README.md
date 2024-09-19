@@ -1,4 +1,4 @@
-# Open Rag
+# OpenRAG
 
 ![Project Logo](url_to_your_project_logo) <!-- Include a project logo or banner here, if applicable -->
 
@@ -6,7 +6,7 @@ Short project description goes here.
 
 ## Table of Contents
 
-- [Open Rag](#open-rag)
+- [OpenRAG](#open-rag)
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
   - [Features](#features)

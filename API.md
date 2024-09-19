@@ -1,11 +1,11 @@
 
-# Open RAG API Documentation
+# OpenRAG API Documentation
 
 ## Version: 0.1
 
 ### **Overview**
 
-The Open RAG API allows for interaction with a variety of endpoints to manage LLM (Large Language Model) operations, file uploads, and chat functionalities. This document outlines the available endpoints, parameters, and expected responses.
+The OpenRAG API allows for interaction with a variety of endpoints to manage LLM (Large Language Model) operations, file uploads, and chat functionalities. This document outlines the available endpoints, parameters, and expected responses.
 
 ---
 

@@ -22,7 +22,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
-    title="Open RAG",
+    title="OpenRAG",
     description="An API for managing LLM operations, file uploads, and chat functionalities.",
     version="0.1",
 )
