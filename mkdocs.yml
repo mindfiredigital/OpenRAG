@@ -7,4 +7,6 @@ plugins:
   - mkdocstrings
 
 nav:
+  - Home: index.md
   - API Endpoints: API.md
+  - About: about.md
