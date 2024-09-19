@@ -1,8 +1,6 @@
 # OpenRAG
 
-<img src="../OpenRAGLogo.png" alt="Project Logo" width="100" height="auto">
-
-Short project description goes here.
+<img src="https://raw.githubusercontent.com/mindfiredigital/OpenRAG/main/OpenRAGLogo.png" alt="OpenRAG Logo" width="100" height="auto">
 
 ## Table of Contents
 
