@@ -13,6 +13,7 @@ langchain-huggingface==0.0.3
 fastembed
 streamlit
 gpt4all==2.7.0
+faiss-cpu
 hurry.filesize
 python-dotenv
 sentence-transformers
