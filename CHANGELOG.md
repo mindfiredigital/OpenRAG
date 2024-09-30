@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.3.3 (2024-09-30)
+
+### Unknown
+
+* Merge branch &#39;master&#39; of https://github.com/mindfiredigital/OpenRAG ([`1728d13`](https://github.com/mindfiredigital/OpenRAG/commit/1728d13260e781854ee542d97fef6bc0dbfa814e))
+
 ## v0.3.2 (2024-09-30)
 
 ### Documentation
@@ -9,6 +15,8 @@
 * docs: add script in yml for auto deploy ([`19c7c6c`](https://github.com/mindfiredigital/OpenRAG/commit/19c7c6c1006db0008ffd8fa2e7797583628c64f5))
 
 ### Fix
+
+* fix: sync with api.md ([`81f4efc`](https://github.com/mindfiredigital/OpenRAG/commit/81f4efc10a52cad1551d08d99f9be049e1ebca49))
 
 * fix: make docs build ([`161de57`](https://github.com/mindfiredigital/OpenRAG/commit/161de5742c877e74c90fb4f31dbcc53e1179478f))
 
