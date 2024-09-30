@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v0.3.2 (2024-09-30)
+
+### Documentation
+
+* docs: update logo ([`eb980fe`](https://github.com/mindfiredigital/OpenRAG/commit/eb980fe5eca00707204cac11ca273a95ef92c496))
+
+* docs: add script in yml for auto deploy ([`19c7c6c`](https://github.com/mindfiredigital/OpenRAG/commit/19c7c6c1006db0008ffd8fa2e7797583628c64f5))
+
+### Fix
+
+* fix: make docs build ([`161de57`](https://github.com/mindfiredigital/OpenRAG/commit/161de5742c877e74c90fb4f31dbcc53e1179478f))
+
+* fix: add curl example and add requirements ([`1c47ccc`](https://github.com/mindfiredigital/OpenRAG/commit/1c47ccc2439972a3ff24b4339502912b03691ce1))
+
 ## v0.3.1 (2024-09-19)
 
 ### Documentation
