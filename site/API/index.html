@@ -644,7 +644,9 @@
 <li><strong>Schema:</strong> An empty schema is defined here, meaning the response body will likely be a simple JSON object like <code>{}</code>.</li>
 </ul>
 </li>
+<li><strong>Code Example</strong></li>
 </ul>
+<p><code>curl -X GET "http://&lt;your-server-address&gt;/" -H "accept: application/json"</code></p>
 <hr />
 <h3 id="2-get-llm-options"><strong>2. Get LLM Options</strong></h3>
 <ul>
@@ -658,7 +660,9 @@
 <li><strong>Schema:</strong> An empty schema, indicating the response will contain a simple JSON structure.</li>
 </ul>
 </li>
+<li><strong>Code Example</strong></li>
 </ul>
+<p><code>curl -X GET "http://&lt;your-server-address&gt;/llm-options" -H "accept: application/json"</code></p>
 <hr />
 <h3 id="3-upload-pdf"><strong>3. Upload PDF</strong></h3>
 <ul>
@@ -694,7 +698,14 @@
 </li>
 </ul>
 </li>
+<li><strong>Code Example</strong></li>
 </ul>
+<p><code>curl -X POST "http://&lt;your-server-address&gt;/upload" \
+  -H "accept: application/json" \
+  -H "Content-Type: multipart/form-data" \
+  -F "model_name=&lt;your-model-name&gt;" \
+  -F "vector_db_name=&lt;your-vector-db-name&gt;" \
+  -F "file=@&lt;path-to-your-pdf-file&gt;"</code></p>
 <hr />
 <h3 id="4-check-collection"><strong>4. Check Collection</strong></h3>
 <ul>
@@ -720,7 +731,10 @@
 </li>
 </ul>
 </li>
+<li><strong>Code Example</strong></li>
 </ul>
+<p><code>curl -X GET "http://&lt;your-server-address&gt;/check-collection?collection_name=&lt;your-collection-name&gt;&amp;vector_db_name=&lt;your-vector-db-name&gt;" \
+  -H "accept: application/json"</code></p>
 <hr />
 <h3 id="5-start-chat"><strong>5. Start Chat</strong></h3>
 <ul>
@@ -748,7 +762,10 @@
 </li>
 </ul>
 </li>
+<li><strong>Code Example</strong></li>
 </ul>
+<p><code>curl -X POST "http://&lt;your-server-address&gt;/chat?collection_name=&lt;your-collection-name&gt;&amp;query=&lt;your-query&gt;&amp;model_name=&lt;your-model-name&gt;&amp;vector_db_name=&lt;your-vector-db-name&gt;" \
+  -H "accept: application/json"</code></p>
 <hr />
 <h2 id="components"><strong>Components</strong></h2>
 <h3 id="schemas"><strong>Schemas</strong></h3>
