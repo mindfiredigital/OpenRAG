@@ -91,7 +91,7 @@ This API can be hosted on your local machine or deployed to a production server.
 
 ## API Documentation
 
-A complete API demo, including the frontend, is available at this [Link](https://codesandbox.io/p/github/abdulla-mindfire/open-rag-fe/draft/trusting-bessie?workspaceId=5ad40487-5374-4afd-9f20-42fc5cdfef2a). The detailed API documentation, which includes all endpoints, parameters, and expected responses, can be found in the [API.md](API.md) file.
+A complete API demo, including the frontend, is available at this [Link](https://codesandbox.io/p/github/abdulla-mindfire/open-rag-fe/main). The detailed API documentation, which includes all endpoints, parameters, and expected responses, can be found in the [API.md](API.md) file.
 
 ## Contributing
 
