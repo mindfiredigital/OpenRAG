@@ -55,14 +55,11 @@ Instructions on how to get started with your project, including installation, pr
 ### Installation
 
 Provide detailed installation steps using code blocks to show commands or configuration files.
-  * Clone the repo
-  * Create virtualenv
-  * Install requirements using requirements.txt ``pip install -r requirements.txt``
-  * Install faiss as per your system 
-    - for cpu : ``pip install faiss-cpu`` 
-    - for gpu : ``pip install faiss-gpu`` 
-  * Run this command to download spacy stuffs ``python3 -m spacy download en_core_web_sm``
-  * Run the application using command ``uvicorn main:app``
+  - Clone the repo
+  - Create virtualenv
+  - Install requirements using requirements.txt ``pip install -r requirements.txt``
+  - Run this command to download spacy stuffs ``python3 -m spacy download en_core_web_sm``
+  - Run the application using command ``uvicorn main:app``
 
 ### Usage
 
