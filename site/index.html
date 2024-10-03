@@ -347,6 +347,15 @@
 </li>
 
         <li class="md-nav__item">
+  <a href="#common-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Errors
+    </span>
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
   <a href="#license" class="md-nav__link">
     <span class="md-ellipsis">
       License
@@ -586,6 +595,15 @@
 </li>
 
         <li class="md-nav__item">
+  <a href="#common-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Errors
+    </span>
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
   <a href="#license" class="md-nav__link">
     <span class="md-ellipsis">
       License
@@ -715,6 +733,16 @@ enabling users to interact with and query their data using different AI models a
 <h2 id="contributing">Contributing</h2>
 <p>Guidelines for contributing to the project. Provide information on how users can contribute, submit issues, or make pull requests.
 Add link to CONTRIBUTING.md file.</p>
+<h2 id="common-errors">Common Errors</h2>
+<p>While running this project, you might encounter the following error:</p>
+<p>TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc &gt;= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:</p>
+<ol>
+<li>Downgrade the protobuf package to 3.20.x or lower.</li>
+<li>Set <code>PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python</code> (but this will use pure-Python parsing and will be much slower).""</li>
+</ol>
+<p>For more information or to resolve this issue, you can refer to this <a href="https://github.com/chroma-core/chroma/issues/2571#issuecomment-2250328476">discussion</a>.</p>
 <h2 id="license">License</h2>
 <p>This project is licensed under the MIT license - see LICENSE.md for details.</p>
 <h2 id="acknowledgments">Acknowledgments</h2>
