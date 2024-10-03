@@ -87,7 +87,17 @@ This API can be hosted on your local machine or deployed to a production server.
   - **Local Hosting:** You can run the application using uvicorn for local development and testing.
   - **Production Hosting:** For production environments, you can use tools like Docker, Kubernetes, or a cloud provider to scale the API. Consider using a WSGI/ASGI server like Gunicorn for production-grade performance.
 
-  Check the API using Swagger UI by visiting ``https://example.com/docs`` or ``https://example.com/openapi.json`` after running the application.
+  Check the API using Swagger UI by visiting
+
+  - ``http://localhost:8000/docs``
+  - ``http://localhost:8000/openapi.json``
+  - [API.md](API.md)
+
+  after running the application.
+
+  You can also check the postman collection.
+
+  [<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/23597091-84066624-db6c-43ab-95a4-fc6a87dba9ac?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D23597091-84066624-db6c-43ab-95a4-fc6a87dba9ac%26entityType%3Dcollection%26workspaceId%3Db40e4180-e113-41dd-b4a7-fdc58cbdd851)
 
 ## API Documentation
 
@@ -108,7 +118,7 @@ If this call came from a _pb2.py file, your generated code is out of date and mu
 If you cannot immediately regenerate your protos, some other possible workarounds are:
 
 1. Downgrade the protobuf package to 3.20.x or lower.
-2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).""
+2. Set ``PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python`` (but this will use pure-Python parsing and will be much slower).""
 
 For more information or to resolve this issue, you can refer to this [discussion](https://github.com/chroma-core/chroma/issues/2571#issuecomment-2250328476).
 
