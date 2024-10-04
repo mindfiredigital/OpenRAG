@@ -1,5 +1,43 @@
 # CHANGELOG
 
+## v0.4.0 (2024-10-03)
+
+### Documentation
+
+* docs: update mkdocs ([`cd57539`](https://github.com/mindfiredigital/OpenRAG/commit/cd57539a5edf311d560efac1b5ad98a4787f7e89))
+
+* docs: update url ([`9d7845e`](https://github.com/mindfiredigital/OpenRAG/commit/9d7845ebd7911dea595561577a737413e8b284ad))
+
+### Feature
+
+* feat: new docs build ([`dba7aca`](https://github.com/mindfiredigital/OpenRAG/commit/dba7aca434ca6245692df552712f85f0888a82f1))
+
+* feat: update readme with api details and postman ([`fddc22b`](https://github.com/mindfiredigital/OpenRAG/commit/fddc22b1b508ae94e7c9ce76a73631f0002cede5))
+
+* feat: new docs build ([`714968f`](https://github.com/mindfiredigital/OpenRAG/commit/714968fd6fa17cc4e06f4bf8a2aa7d954849ec11))
+
+* feat: update readme and mkdocs ([`87b9f2f`](https://github.com/mindfiredigital/OpenRAG/commit/87b9f2f8513c1e124ca5baff6afa92d6f983f906))
+
+* feat: new docs build ([`5f0884e`](https://github.com/mindfiredigital/OpenRAG/commit/5f0884ec84030c20e7883f4cc8079b9284c66a88))
+
+* feat: update readme with api details and postman ([`08c9253`](https://github.com/mindfiredigital/OpenRAG/commit/08c925314c1272de2c1ae522708f55f62b5dee02))
+
+### Unknown
+
+* Merge pull request #9 from mindfiredigital/dev
+
+mkdocs build and readme update ([`b7bd95c`](https://github.com/mindfiredigital/OpenRAG/commit/b7bd95c29b1cb8f4f2ed0fb3554cd3c2063ba112))
+
+* Merge branch &#39;dev&#39; of https://github.com/mindfiredigital/OpenRAG into dev ([`b62d03f`](https://github.com/mindfiredigital/OpenRAG/commit/b62d03f03578a1b67195dcf0e90c8ba4f67c1f8f))
+
+* Merge pull request #8 from mindfiredigital/doc/update_readme
+
+Doc/update readme ([`019e35d`](https://github.com/mindfiredigital/OpenRAG/commit/019e35defced57286d8fe467bfda469c9272835c))
+
+* remove faiss installation step from readme ([`3885172`](https://github.com/mindfiredigital/OpenRAG/commit/3885172f31dd70b2942713ff67185972b2414819))
+
+* add common errors section in README ([`44128c0`](https://github.com/mindfiredigital/OpenRAG/commit/44128c0587121c82ab8c7d0695ef9e4570062c9d))
+
 ## v0.3.3 (2024-09-30)
 
 ### Unknown
