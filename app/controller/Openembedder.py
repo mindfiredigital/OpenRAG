@@ -78,11 +78,11 @@ class OpenEmbedder:
         """
 
         if self.vectordb_name == "chromadb":
-            return "./chromadb_store"
+            return "./vector_db_stores/chromadb_store"
         if self.vectordb_name == "faiss":
-            return "./faiss_store"
+            return "./vector_db_stores/faiss_store"
         if self.vectordb_name == "qdrant":
-            return "./qdrant_store"
+            return "./vector_db_stores/qdrant_store"
         return ""
 
     def _get_embedding_size(self) -> int:
