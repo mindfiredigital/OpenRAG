@@ -59,3 +59,29 @@ async def check_collection(collection_name: str, vector_db_name: VectorDB):
         raise HTTPException(
             status_code=400, detail=f"Failed to validate collection: {str(e)}"
         ) from e
+
+
+@router.get(
+    "/vector-db-list",
+    summary="Vector DB Lists",
+    description="Provides all the supported vector db lists",
+)
+async def vector_db_list():
+    """
+    Endpoint to retrieve the list of supported vector databases.
+
+    Returns:
+        list: A list of lowercase string names representing the supported
+        vector databases.
+
+    Example Response:
+        [
+            "chromadb",
+            "qdrant",
+            "faiss"
+        ]
+    """
+
+    # Create a list of all enum names, converted to lowercase.
+    lists = [db.name.lower() for db in VectorDB]
+    return lists
