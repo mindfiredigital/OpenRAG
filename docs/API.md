@@ -136,6 +136,39 @@ The OpenRAG API allows for interaction with a variety of endpoints to manage LLM
 
 ---
 
+### **6. Vector DB List**
+- **Endpoint:** `/vector-db-list`
+- **Method:** `GET`
+- **Summary:** Retrieves the list of supported vector databases.
+- **Operation ID:** `get_vector_db_list`
+- **Parameters:** None
+- **Responses:**
+  - **200 (Successful Response):**
+    - **Content Type:** `application/json`
+    - **Schema:** A list of strings representing the names of supported vector databases.
+      - **Example:**
+        ```json
+        [
+          "chromadb",
+          "qdrant",
+          "faiss"
+        ]
+        ```
+  - **422 (Validation Error):**
+    - **Content Type:** `application/json`
+    - **Schema:**
+      - **HTTPValidationError:**
+        - **detail (array of ValidationError):** Contains details of the validation error.
+
+- **Code Example**
+
+  ```
+  curl -X GET "http://<your-server-address>/vector-db-list" \
+  -H "accept: application/json"
+  ```
+
+---
+
 ## **Components**
 
 ### **Schemas**

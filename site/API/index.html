@@ -300,6 +300,15 @@
 
 </li>
 
+          <li class="md-nav__item">
+  <a href="#6-vector-db-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Vector DB List
+    </span>
+  </a>
+
+</li>
+
       </ul>
     </nav>
 
@@ -517,6 +526,15 @@
   <a href="#5-start-chat" class="md-nav__link">
     <span class="md-ellipsis">
       5. Start Chat
+    </span>
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#6-vector-db-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Vector DB List
     </span>
   </a>
 
@@ -765,6 +783,44 @@
 <li><strong>Code Example</strong></li>
 </ul>
 <p><code>curl -X POST "http://&lt;your-server-address&gt;/chat?collection_name=&lt;your-collection-name&gt;&amp;query=&lt;your-query&gt;&amp;model_name=&lt;your-model-name&gt;&amp;vector_db_name=&lt;your-vector-db-name&gt;" \
+  -H "accept: application/json"</code></p>
+<hr />
+<h3 id="6-vector-db-list"><strong>6. Vector DB List</strong></h3>
+<ul>
+<li><strong>Endpoint:</strong> <code>/vector-db-list</code></li>
+<li><strong>Method:</strong> <code>GET</code></li>
+<li><strong>Summary:</strong> Retrieves the list of supported vector databases.</li>
+<li><strong>Operation ID:</strong> <code>get_vector_db_list</code></li>
+<li><strong>Parameters:</strong> None</li>
+<li><strong>Responses:</strong></li>
+<li><strong>200 (Successful Response):</strong><ul>
+<li><strong>Content Type:</strong> <code>application/json</code></li>
+<li><strong>Schema:</strong> A list of strings representing the names of supported vector databases.</li>
+<li><strong>Example:</strong>
+    <code>json
+    [
+      "chromadb",
+      "qdrant",
+      "faiss"
+    ]</code></li>
+</ul>
+</li>
+<li>
+<p><strong>422 (Validation Error):</strong></p>
+<ul>
+<li><strong>Content Type:</strong> <code>application/json</code></li>
+<li><strong>Schema:</strong></li>
+<li><strong>HTTPValidationError:</strong><ul>
+<li><strong>detail (array of ValidationError):</strong> Contains details of the validation error.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Code Example</strong></p>
+</li>
+</ul>
+<p><code>curl -X GET "http://&lt;your-server-address&gt;/vector-db-list" \
   -H "accept: application/json"</code></p>
 <hr />
 <h2 id="components"><strong>Components</strong></h2>
