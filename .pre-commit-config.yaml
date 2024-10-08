@@ -24,3 +24,16 @@ repos:
             "-sn", # Don't display the score
             ]
         files: ^app/.*\.py$
+
+    -   id: pytest
+        name: pytest
+        entry: pytest
+        language: system
+        types: [python]
+        require_serial: true
+        args:
+            [
+            "--maxfail=2",  # Stop after 5 test failures
+            "--disable-warnings",  # Disable warnings in the output
+            ]
+        files: ^tests/.*\.py$  # Only run tests in the tests/ directory
