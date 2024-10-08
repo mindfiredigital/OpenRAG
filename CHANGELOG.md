@@ -1,13 +1,40 @@
 # CHANGELOG
 
 
+## v0.7.0 (2024-10-08)
+
+### Unknown
+
+* Merge pull request #16 from mindfiredigital/dev
+
+Embedding Model Feature ([`f9a7a7c`](https://github.com/mindfiredigital/OpenRAG/commit/f9a7a7c9339f2aa26c92ceb7df40ba37e34bfdc0))
+
+* Merge branch 'master' of https://github.com/mindfiredigital/OpenRAG into dev ([`c3ba346`](https://github.com/mindfiredigital/OpenRAG/commit/c3ba346a9ef08906b67538c989a7dd235e6d8b4b))
+
+
 ## v0.6.0 (2024-10-08)
+
+### Documentation
+
+* docs: update docs ([`0265d55`](https://github.com/mindfiredigital/OpenRAG/commit/0265d55e8da5b765493c639630fdf4a92c28c051))
+
+### Features
+
+* feat: add embedding model choice ([`24b8952`](https://github.com/mindfiredigital/OpenRAG/commit/24b895202bbcfd1447212bfce5447d99e35f0f2f))
+
+### Testing
+
+* test: add test cases ([`3526efb`](https://github.com/mindfiredigital/OpenRAG/commit/3526efbab1fef0ab9a6bbc284711a2bee14e6dda))
 
 ### Unknown
 
 * Merge pull request #15 from mindfiredigital/dev
 
 semantic version ([`33576bd`](https://github.com/mindfiredigital/OpenRAG/commit/33576bd7e30a67e5918225d9aba1da5bebd44fdc))
+
+* Merge pull request #14 from mindfiredigital/dev
+
+Test case ([`9b48d07`](https://github.com/mindfiredigital/OpenRAG/commit/9b48d07ff6fc0103d85d9b1492fcc60199631e82))
 
 * Merge branch 'master' of https://github.com/mindfiredigital/OpenRAG into dev ([`784ca3b`](https://github.com/mindfiredigital/OpenRAG/commit/784ca3b964642ba8f32a384a1532485a9656c3ab))
 
@@ -17,6 +44,8 @@ semantic version ([`33576bd`](https://github.com/mindfiredigital/OpenRAG/commit/
 ### Documentation
 
 * docs: update docs for new api ([`5097b3d`](https://github.com/mindfiredigital/OpenRAG/commit/5097b3d2d2e620bc6d8b161f44b4f0e5bf8c922b))
+
+* docs: add docstring ([`9a7a845`](https://github.com/mindfiredigital/OpenRAG/commit/9a7a845e371469e9af543c3e0777fff59c958788))
 
 * docs: add docstring ([`1495e1b`](https://github.com/mindfiredigital/OpenRAG/commit/1495e1b32d5df42f507762900babe9f7d4b79336))
 
@@ -34,15 +63,11 @@ semantic version ([`33576bd`](https://github.com/mindfiredigital/OpenRAG/commit/
 
 ### Refactoring
 
+* refactor: change folder structure for modular ([`8975d24`](https://github.com/mindfiredigital/OpenRAG/commit/8975d2407ac15c6b9b977e66fb320775715dcdc4))
+
 * refactor: change folder structure for modular ([`4f4e62b`](https://github.com/mindfiredigital/OpenRAG/commit/4f4e62b7356493790a87e9672c4fae2121b0634d))
 
 ### Unknown
-
-* Merge pull request #14 from mindfiredigital/dev
-
-Test case ([`9b48d07`](https://github.com/mindfiredigital/OpenRAG/commit/9b48d07ff6fc0103d85d9b1492fcc60199631e82))
-
-* update: add pytest ([`1af31fd`](https://github.com/mindfiredigital/OpenRAG/commit/1af31fd84895971cbf0fdaf432184b78d6046262))
 
 * Merge pull request #12 from mindfiredigital/dev
 
@@ -52,14 +77,18 @@ Vector DB API ([`dee19e6`](https://github.com/mindfiredigital/OpenRAG/commit/dee
 
 Folder Restructuring ([`d233e2d`](https://github.com/mindfiredigital/OpenRAG/commit/d233e2d7a65c2f195a63ee490d832eec8541147b))
 
+* Merge pull request #10 from mindfiredigital/dev
+
+Folder restructuring ([`bbc9500`](https://github.com/mindfiredigital/OpenRAG/commit/bbc950040084eac23520928a3d8d12a30be4cecd))
+
+* update: add pytest ([`1af31fd`](https://github.com/mindfiredigital/OpenRAG/commit/1af31fd84895971cbf0fdaf432184b78d6046262))
+
 * Merge branch 'dev' of https://github.com/mindfiredigital/OpenRAG into dev ([`ab39425`](https://github.com/mindfiredigital/OpenRAG/commit/ab39425d3850e3a590a6f87dd1a1d562a30bf9a0))
 
 
 ## v0.4.0 (2024-10-03)
 
 ### Documentation
-
-* docs: add docstring ([`9a7a845`](https://github.com/mindfiredigital/OpenRAG/commit/9a7a845e371469e9af543c3e0777fff59c958788))
 
 * docs: update mkdocs ([`cd57539`](https://github.com/mindfiredigital/OpenRAG/commit/cd57539a5edf311d560efac1b5ad98a4787f7e89))
 
@@ -79,15 +108,7 @@ Folder Restructuring ([`d233e2d`](https://github.com/mindfiredigital/OpenRAG/com
 
 * feat: update readme with api details and postman ([`08c9253`](https://github.com/mindfiredigital/OpenRAG/commit/08c925314c1272de2c1ae522708f55f62b5dee02))
 
-### Refactoring
-
-* refactor: change folder structure for modular ([`8975d24`](https://github.com/mindfiredigital/OpenRAG/commit/8975d2407ac15c6b9b977e66fb320775715dcdc4))
-
 ### Unknown
-
-* Merge pull request #10 from mindfiredigital/dev
-
-Folder restructuring ([`bbc9500`](https://github.com/mindfiredigital/OpenRAG/commit/bbc950040084eac23520928a3d8d12a30be4cecd))
 
 * Merge pull request #9 from mindfiredigital/dev
 
