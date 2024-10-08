@@ -1,8 +1,38 @@
 # CHANGELOG
 
+## v0.5.0 (2024-10-07)
+
+### Documentation
+
+* docs: update docs for new api ([`5097b3d`](https://github.com/mindfiredigital/OpenRAG/commit/5097b3d2d2e620bc6d8b161f44b4f0e5bf8c922b))
+
+* docs: add docstring ([`1495e1b`](https://github.com/mindfiredigital/OpenRAG/commit/1495e1b32d5df42f507762900babe9f7d4b79336))
+
+### Feature
+
+* feat: add vector db endpoint ([`74704db`](https://github.com/mindfiredigital/OpenRAG/commit/74704db233dda752eb5a2ce587db855291f3024f))
+
+### Refactor
+
+* refactor: change folder structure for modular ([`4f4e62b`](https://github.com/mindfiredigital/OpenRAG/commit/4f4e62b7356493790a87e9672c4fae2121b0634d))
+
+### Unknown
+
+* Merge pull request #12 from mindfiredigital/dev
+
+Vector DB API ([`dee19e6`](https://github.com/mindfiredigital/OpenRAG/commit/dee19e6169642bbd75138d68e4255346fdee7fde))
+
+* Merge pull request #11 from mindfiredigital/dev
+
+Folder Restructuring ([`d233e2d`](https://github.com/mindfiredigital/OpenRAG/commit/d233e2d7a65c2f195a63ee490d832eec8541147b))
+
+* Merge branch &#39;dev&#39; of https://github.com/mindfiredigital/OpenRAG into dev ([`ab39425`](https://github.com/mindfiredigital/OpenRAG/commit/ab39425d3850e3a590a6f87dd1a1d562a30bf9a0))
+
 ## v0.4.0 (2024-10-03)
 
 ### Documentation
+
+* docs: add docstring ([`9a7a845`](https://github.com/mindfiredigital/OpenRAG/commit/9a7a845e371469e9af543c3e0777fff59c958788))
 
 * docs: update mkdocs ([`cd57539`](https://github.com/mindfiredigital/OpenRAG/commit/cd57539a5edf311d560efac1b5ad98a4787f7e89))
 
@@ -22,7 +52,15 @@
 
 * feat: update readme with api details and postman ([`08c9253`](https://github.com/mindfiredigital/OpenRAG/commit/08c925314c1272de2c1ae522708f55f62b5dee02))
 
+### Refactor
+
+* refactor: change folder structure for modular ([`8975d24`](https://github.com/mindfiredigital/OpenRAG/commit/8975d2407ac15c6b9b977e66fb320775715dcdc4))
+
 ### Unknown
+
+* Merge pull request #10 from mindfiredigital/dev
+
+Folder restructuring ([`bbc9500`](https://github.com/mindfiredigital/OpenRAG/commit/bbc950040084eac23520928a3d8d12a30be4cecd))
 
 * Merge pull request #9 from mindfiredigital/dev
 
