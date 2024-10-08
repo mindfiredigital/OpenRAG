@@ -30,3 +30,4 @@ spacy
 mkdocs
 mkdocstrings[python]
 mkdocs-material
+pytest

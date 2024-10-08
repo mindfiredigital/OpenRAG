@@ -52,7 +52,11 @@ async def check_collection(collection_name: str, vector_db_name: VectorDB):
     )
 
     try:
-        OpenEmbedder(vectordb_name=vector_db_name, collection_name=collection_name)
+        embed = OpenEmbedder(
+            vectordb_name=vector_db_name, collection_name=collection_name
+        )
+        if embed.vectordb is None:
+            raise HTTPException(status_code=400, detail="Failed to validate collection")
         return {"message": "Validated"}
     except Exception as e:
         logger.exception("Failed to validate collection")

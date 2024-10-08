@@ -1,12 +1,12 @@
 from pathlib import Path
 import os
 import uuid
-import PyPDF2
 
 from fastapi import APIRouter, HTTPException, Form, File, UploadFile
 from schemas import UploadResponse
 from config.log_config import logger
 from utils.constant import MODEL_LIST, VectorDB
+from controller.upload_file import extract_and_create_temp_file
 from controller.Openembedder import OpenEmbedder
 
 # Ensure temporary directory exists
@@ -69,16 +69,8 @@ async def upload_pdf(
     tmp_file_path = tmp_dir / tmp_filename
 
     try:
-        pdf_text = ""
-        reader = PyPDF2.PdfReader(file.file)
-        for _, page in enumerate(reader.pages):  # Use enumerate for iteration
-            pdf_text += page.extract_text()
-
-        with open(tmp_file_path, "w", encoding="utf-8") as f:
-            f.write(pdf_text)
-
+        extract_and_create_temp_file(file, tmp_file_path)
         logger.info("PDF text extracted and saved to %s", tmp_file_path)
-
     except Exception as e:
         logger.exception("Failed to process PDF")
         raise HTTPException(
