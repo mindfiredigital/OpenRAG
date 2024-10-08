@@ -5,7 +5,7 @@ import uuid
 from fastapi import APIRouter, HTTPException, Form, File, UploadFile
 from schemas import UploadResponse
 from config.log_config import logger
-from utils.constant import MODEL_LIST, VectorDB
+from utils.constant import MODEL_LIST, VectorDB, EmbeddingModel
 from controller.upload_file import extract_and_create_temp_file
 from controller.Openembedder import OpenEmbedder
 
@@ -26,6 +26,7 @@ router = APIRouter(prefix="", tags=["Upload"])
 async def upload_pdf(
     model_name: str = Form(...),
     vector_db_name: VectorDB = Form(...),
+    embedding_model: EmbeddingModel = Form(...),
     file: UploadFile = File(...),
 ):
     """
@@ -35,6 +36,7 @@ async def upload_pdf(
         model_name (str): The name of the Large Language Model (LLM) to be used.
         vector_db_name (str): The vector database in which the PDF will be stored.
         file (UploadFile): The uploaded PDF file.
+        embedding_model (str): The embedding model which will embed the text.
 
     Returns:
         UploadResponse: A response object containing the generated collection name.
@@ -80,7 +82,9 @@ async def upload_pdf(
     collection_name = uuid.uuid4().hex
     try:
         embedder = OpenEmbedder(
-            vectordb_name=vector_db_name, collection_name=collection_name
+            vectordb_name=vector_db_name,
+            collection_name=collection_name,
+            embedding_model_name=embedding_model,
         )
         embedder.create_database(str(tmp_file_path))
         logger.info("Database created for collection: %s", collection_name)

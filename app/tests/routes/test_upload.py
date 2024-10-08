@@ -39,7 +39,10 @@ def test_pdf_upload_no_model_key_422(client):
     file_content.name = "test.pdf"
     response = client.post(
         "/upload",
-        data={"vector_db_name": "faiss"},
+        data={
+            "vector_db_name": "faiss",
+            "embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
+        },
         files={"file": ("test.pdf", file_content, "application/pdf")},
     )
     assert response.status_code == 422
@@ -61,7 +64,11 @@ def test_pdf_upload_wrong_model_name_400(client):
     file_content.name = "test.pdf"
     response = client.post(
         "/upload",
-        data={"model_name": "test-model", "vector_db_name": "faiss"},
+        data={
+            "model_name": "test-model",
+            "vector_db_name": "faiss",
+            "embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
+        },
         files={"file": ("test.pdf", file_content, "application/pdf")},
     )
     assert response.status_code == 400
@@ -70,7 +77,11 @@ def test_pdf_upload_wrong_model_name_400(client):
 def test_pdf_upload_no_file_key_422(client):
     response = client.post(
         "/upload",
-        data={"model_name": "test-model", "vector_db_name": "faiss"},
+        data={
+            "model_name": "test-model",
+            "vector_db_name": "faiss",
+            "embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
+        },
     )
     assert response.status_code == 422
 
@@ -91,7 +102,10 @@ def test_pdf_upload_no_vector_db_key_422(client):
     file_content.name = "test.pdf"
     response = client.post(
         "/upload",
-        data={"model_name": "Meta-Llama-3-8B-Instruct.Q4_0.gguf"},
+        data={
+            "model_name": "Meta-Llama-3-8B-Instruct.Q4_0.gguf",
+            "embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
+        },
         files={"file": ("test.pdf", file_content, "application/pdf")},
     )
     assert response.status_code == 422
@@ -116,6 +130,7 @@ def test_pdf_upload_wrong_vector_db_422(client):
         data={
             "model_name": "Meta-Llama-3-8B-Instruct.Q4_0.gguf",
             "vector_db_name": "test",
+            "embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
         },
         files={"file": ("test.pdf", file_content, "application/pdf")},
     )
@@ -141,6 +156,7 @@ def test_pdf_upload_wrong_file_content_400(client):
         data={
             "model_name": "Meta-Llama-3-8B-Instruct.Q4_0.gguf",
             "vector_db_name": "faiss",
+            "embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
         },
         files={"file": ("test.pdf", file_content, "application/json")},
     )
@@ -171,6 +187,7 @@ def test_pdf_upload_large_file_size_400(client):
         data={
             "model_name": "Meta-Llama-3-8B-Instruct.Q4_0.gguf",
             "vector_db_name": "faiss",
+            "embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
         },
         files={"file": ("test.pdf", file_content, "application/pdf")},
     )

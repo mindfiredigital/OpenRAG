@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from config.log_config import logger
 from utils.utils import chat_histories, manage_chat_history, preprocess_text
-from utils.constant import MODEL_LIST, VectorDB
+from utils.constant import MODEL_LIST, VectorDB, EmbeddingModel
 from controller.Openembedder import OpenEmbedder
 from controller.Openllm import OpenLLM
 
@@ -16,7 +16,11 @@ router = APIRouter(prefix="", tags=["Chat"])
     description="Initiates a chat based on the provided collection and query.",
 )
 async def start_chat(
-    collection_name: str, query: str, model_name: str, vector_db_name: VectorDB
+    collection_name: str,
+    query: str,
+    model_name: str,
+    vector_db_name: VectorDB,
+    embedding_model: EmbeddingModel,
 ):
     """
     Initiates a chat session with a specific collection and processes the query.
@@ -26,6 +30,7 @@ async def start_chat(
         query (str): The user's query to search against the collection.
         model_name (str): The Large Language Model (LLM) to be used.
         vector_db_name (str): The vector database being used for the collection.
+        embedding_model (str): The embedding model used while uploading the file
 
     Returns:
         dict: The assistant's response based on the query and the context from the collection.
@@ -58,7 +63,9 @@ async def start_chat(
 
     try:
         embedder = OpenEmbedder(
-            vectordb_name=vector_db_name, collection_name=collection_name
+            vectordb_name=vector_db_name,
+            collection_name=collection_name,
+            embedding_model_name=embedding_model,
         )
         llm = OpenLLM(model_name=model_name)
         hybrid_result = embedder.query_database(query=query, k=3)

@@ -76,7 +76,8 @@ The OpenRAG API allows for interaction with a variety of endpoints to manage LLM
   -H "Content-Type: multipart/form-data" \
   -F "model_name=<your-model-name>" \
   -F "vector_db_name=<your-vector-db-name>" \
-  -F "file=@<path-to-your-pdf-file>"
+  -F "file=@<path-to-your-pdf-file>" \
+  -F "embedding_model=<embedding-model-name>"
   ```
 
 
@@ -102,7 +103,7 @@ The OpenRAG API allows for interaction with a variety of endpoints to manage LLM
 - **Code Example**
 
   ```
-  curl -X GET "http://<your-server-address>/check-collection?collection_name=<your-collection-name>&vector_db_name=<your-vector-db-name>" \
+  curl -X GET "http://<your-server-address>/check-collection?collection_name=<your-collection-name>&vector_db_name=<your-vector-db-name>&embedding_model=<embedding-model-name>" \
   -H "accept: application/json"
   ```
 
@@ -130,7 +131,7 @@ The OpenRAG API allows for interaction with a variety of endpoints to manage LLM
 - **Code Example**
 
   ```
-  curl -X POST "http://<your-server-address>/chat?collection_name=<your-collection-name>&query=<your-query>&model_name=<your-model-name>&vector_db_name=<your-vector-db-name>" \
+  curl -X POST "http://<your-server-address>/chat?collection_name=<your-collection-name>&query=<your-query>&model_name=<your-model-name>&vector_db_name=<your-vector-db-name>&embedding_model=<embedding-model-name>" \
   -H "accept: application/json"
   ```
 

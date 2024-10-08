@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from utils.constant import LLM_OPTIONS, VectorDB
+from utils.constant import LLM_OPTIONS, VectorDB, EmbeddingModel
 from controller.Openembedder import OpenEmbedder
 from config.log_config import logger
 
@@ -28,13 +28,16 @@ async def get_llm_options():
     summary="Check Collection",
     description="Verifies if a specific collection exists in the vector database.",
 )
-async def check_collection(collection_name: str, vector_db_name: VectorDB):
+async def check_collection(
+    collection_name: str, vector_db_name: VectorDB, embedding_model: EmbeddingModel
+):
     """
     Verifies if a collection exists in the specified vector database.
 
     Args:
         collection_name (str): The name of the collection to check.
         vector_db_name (str): The vector database in which to check the collection.
+        embedding_model (str): The embedding model used while uploading the file
 
     Returns:
         dict: A message indicating whether the collection is validated.
@@ -53,7 +56,9 @@ async def check_collection(collection_name: str, vector_db_name: VectorDB):
 
     try:
         embed = OpenEmbedder(
-            vectordb_name=vector_db_name, collection_name=collection_name
+            vectordb_name=vector_db_name,
+            collection_name=collection_name,
+            embedding_model_name=embedding_model,
         )
         if embed.vectordb is None:
             raise HTTPException(status_code=400, detail="Failed to validate collection")

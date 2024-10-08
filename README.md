@@ -76,8 +76,8 @@ The application is API-first and can be integrated with various frontend tools. 
   -H "Content-Type: multipart/form-data" \
   -F "file=@yourfile.pdf" \
   -F "model_name=GPT-3.5" \
-  -F "vector_db_name=Qdrant"
-
+  -F "vector_db_name=qdrant" \
+  -F "embedding_model=name"
   ```
 
 ## API Hosting
