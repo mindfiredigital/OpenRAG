@@ -63,3 +63,11 @@ for model in GPT4All.list_models():
     LLM_OPTIONS.append(tmp_dict)
     MODEL_LIST.append(model["filename"])
     setattr(ModelEnum, model["filename"], model["filename"])
+
+
+class EmbeddingModel(str, Enum):
+    MULTI_QA_MPNET = "multi-qa-mpnet-base-dot-v1"
+    ST_ALL_MPNET = "sentence-transformers/all-mpnet-base-v2"
+    META_DPR_QUESTION = "facebook/dpr-question_encoder-single-nq-base"
+    MIXEDBREAD_EMBED = "mixedbread-ai/mxbai-embed-large-v1"
+    ST_ALL_MINILM = "sentence-transformers/all-MiniLM-L6-v2"

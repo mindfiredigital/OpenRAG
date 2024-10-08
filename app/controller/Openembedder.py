@@ -10,19 +10,16 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 import PyPDF2
 import faiss  # pylint: disable=import-error
 
+from utils.constant import EmbeddingModel
+
 
 os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "cpp"
-# multi-qa-mpnet-base-dot-v1
-# sentence-transformers/all-mpnet-base-v2
-# facebook/dpr-question_encoder-single-nq-base
-# mixedbread-ai/mxbai-embed-large-v1
-# sentence-transformers/all-MiniLM-L6-v2
 
 
 class OpenEmbedder:
     def __init__(
         self,
-        embedding_model_name: str = "mixedbread-ai/mxbai-embed-large-v1",
+        embedding_model_name: str = EmbeddingModel.MIXEDBREAD_EMBED,
         vectordb_name: str = "chromadb",
         collection_name: str = "my_collection",
         qdrant_url: str = "http://0.0.0.0:6333",
