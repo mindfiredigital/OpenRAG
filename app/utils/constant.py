@@ -66,6 +66,34 @@ for model in GPT4All.list_models():
 
 
 class EmbeddingModel(str, Enum):
+    """
+    Enum representing different embedding models used for generating vector representations of text.
+
+    Each model is identified by its unique string identifier, which corresponds to a specific
+    pre-trainedmodel from popular libraries such as `sentence-transformers` or `facebook/dpr`.
+    These models are used for tasks such as question answering, document retrieval, and
+    general-purpose text embeddings.
+
+    Attributes:
+        MULTI_QA_MPNET (str): "multi-qa-mpnet-base-dot-v1"
+            A model designed for question answering, optimized for generating high-quality
+            embeddings.
+
+        ST_ALL_MPNET (str): "sentence-transformers/all-mpnet-base-v2"
+            A sentence-transformer model that provides strong general-purpose embeddings.
+
+        META_DPR_QUESTION (str): "facebook/dpr-question_encoder-single-nq-base"
+            Facebook's dense passage retrieval (DPR) model, optimized for question encoding.
+
+        MIXEDBREAD_EMBED (str): "mixedbread-ai/mxbai-embed-large-v1"
+            A large embedding model from Mixedbread AI designed for generating robust text
+            embeddings.
+
+        ST_ALL_MINILM (str): "sentence-transformers/all-MiniLM-L6-v2"
+            A smaller, efficient model from sentence-transformers designed for general-purpose
+            embeddings.
+    """
+
     MULTI_QA_MPNET = "multi-qa-mpnet-base-dot-v1"
     ST_ALL_MPNET = "sentence-transformers/all-mpnet-base-v2"
     META_DPR_QUESTION = "facebook/dpr-question_encoder-single-nq-base"
