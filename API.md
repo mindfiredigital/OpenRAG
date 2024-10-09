@@ -131,8 +131,17 @@ The OpenRAG API allows for interaction with a variety of endpoints to manage LLM
 - **Code Example**
 
   ```
-  curl -X POST "http://<your-server-address>/chat?collection_name=<your-collection-name>&query=<your-query>&model_name=<your-model-name>&vector_db_name=<your-vector-db-name>&embedding_model=<embedding-model-name>" \
-  -H "accept: application/json"
+  curl -X POST "http://<your-server-address>/chat" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "collection_name": "<your-collection-name>",
+    "query": "<your-query>",
+    "model_name": "<your-model-name>",
+    "vector_db_name": "<your-vector-db-name>",
+    "embedding_model": "<your-embedding-model-name>",
+    "custom_prompt": "<optional-custom-prompt>"  # Optional field, remove if not needed
+  }'
+
   ```
 
 ---
