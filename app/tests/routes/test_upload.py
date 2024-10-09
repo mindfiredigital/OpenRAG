@@ -16,7 +16,9 @@ import io
 #     file_content.name = "test.pdf"
 #     response = client.post(
 #         "/upload",
-#         data={"model_name": "Meta-Llama-3-8B-Instruct.Q4_0.gguf", "vector_db_name": "faiss"},
+#         data={"model_name": "Meta-Llama-3-8B-Instruct.Q4_0.gguf",
+#               "vector_db_name": "faiss",
+#               "embedding_model": "mixedbread-ai/mxbai-embed-large-v1"},
 #         files={"file": ("test.pdf", file_content, "application/pdf")},
 #     )
 #     data = response.json()
