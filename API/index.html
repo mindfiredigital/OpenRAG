@@ -783,8 +783,18 @@
 </li>
 <li><strong>Code Example</strong></li>
 </ul>
-<p><code>curl -X POST "http://&lt;your-server-address&gt;/chat?collection_name=&lt;your-collection-name&gt;&amp;query=&lt;your-query&gt;&amp;model_name=&lt;your-model-name&gt;&amp;vector_db_name=&lt;your-vector-db-name&gt;&amp;embedding_model=&lt;embedding-model-name&gt;" \
-  -H "accept: application/json"</code></p>
+<p>```
+  curl -X POST "http://<your-server-address>/chat" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "collection_name": "<your-collection-name>",
+    "query": "<your-query>",
+    "model_name": "<your-model-name>",
+    "vector_db_name": "<your-vector-db-name>",
+    "embedding_model": "<your-embedding-model-name>",
+    "custom_prompt": "<optional-custom-prompt>"  # Optional field, remove if not needed
+  }'</p>
+<p>```</p>
 <hr />
 <h3 id="6-vector-db-list"><strong>6. Vector DB List</strong></h3>
 <ul>
