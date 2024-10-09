@@ -58,6 +58,25 @@ def test_check_collection_correct_vector_db_required_422(client):
     assert data["detail"][0]["loc"][1] == "vector_db_name"
 
 
+def test_check_collection_embedding_model_required_422(client):
+    response = client.get(
+        "/check-collection?collection_name=djckdnlcj4r384389&vector_db_name=faiss"
+    )
+    data = response.json()
+    assert response.status_code == 422
+    assert data["detail"][0]["loc"][1] == "embedding_model"
+
+
+def test_check_collection_correct_embedding_model_required_422(client):
+    response = client.get(
+        "/check-collection?collection_name=djckdnlcj4r384389"
+        "&vector_db_name=faiss&embedding_model=test"
+    )
+    data = response.json()
+    assert response.status_code == 422
+    assert data["detail"][0]["loc"][1] == "embedding_model"
+
+
 def test_check_collection_200(client):
     response = client.get(
         "/check-collection?collection_name=djckdnlcj4r384389"
