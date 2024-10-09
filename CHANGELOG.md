@@ -1,6 +1,23 @@
 # CHANGELOG
 
 
+## v0.7.1 (2024-10-09)
+
+### Documentation
+
+* docs: add doc string ([`51d9c95`](https://github.com/mindfiredigital/OpenRAG/commit/51d9c959ff7a12e727dfcd495c8f7ab9ef9289f7))
+
+### Fixes
+
+* fix: test case update ([`e41a924`](https://github.com/mindfiredigital/OpenRAG/commit/e41a92423553a358e3a586207b2bd9b9fe491738))
+
+### Unknown
+
+* Merge pull request #17 from mindfiredigital/dev
+
+Docstring and Test case ([`c282a76`](https://github.com/mindfiredigital/OpenRAG/commit/c282a768c064b356ab025f2a4ded7d458e50d0cc))
+
+
 ## v0.7.0 (2024-10-08)
 
 ### Unknown
