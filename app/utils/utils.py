@@ -2,6 +2,7 @@ import re
 from typing import Dict, List
 import tiktoken
 from pydantic import BaseModel
+from fastapi import HTTPException
 
 import nltk
 from nltk.corpus import stopwords
@@ -101,3 +102,66 @@ def preprocess_text(text):
     processed_text = " ".join(tokens)
 
     return processed_text
+
+
+def generate_final_prompt(history_prompt, results, query):
+    final_prompt = f"""
+            Chat History:
+            {history_prompt}
+
+            Context:
+            {results}
+
+            Prompt:
+            1. Give a response matching with the query.
+            2. Only respond from the above context.
+            3. Provide an answer in a good format.
+            4. Do not repeat the query.
+            5. Do not add questions in the response.
+            6. Do not repeat the prompt in the response.
+
+            Query:
+            {query}
+        """
+    return final_prompt
+
+
+# Helper function to validate custom prompt
+def validate_custom_prompt(custom_prompt: str):
+    """
+    Validates the custom prompt to ensure it contains the required placeholders.
+
+    Args:
+        custom_prompt (str): The custom prompt provided by the user.
+
+    Raises:
+        HTTPException: If the custom prompt does not contain all required placeholders
+        ('{query}', '{chat_history}', '{results}').
+    """
+
+    required_placeholders = ["{query}", "{chat_history}", "{results}"]
+    for placeholder in required_placeholders:
+        if placeholder not in custom_prompt:
+            raise HTTPException(
+                status_code=400,
+                detail=f"""Custom prompt must include {placeholder} placeholder.
+                    Here is the example how you can construct your prompt around this
+
+                    Chat History:
+                    {"history_prompt"}
+
+                    Context:
+                    {"results"}
+
+                    Prompt:
+                    1. Give a response matching with the query.
+                    2. Only respond from the above context.
+                    3. Provide an answer in a good format.
+                    4. Do not repeat the query.
+                    5. Do not add questions in the response.
+                    6. Do not repeat the prompt in the response.
+
+                    Query:
+                    {"query"}
+                """,
+            )

@@ -245,6 +245,7 @@ class OpenEmbedder:
         Returns:
             List: A list of the top-k similar results from the vector database.
         """
-
-        results = self.vectordb.similarity_search(query, k=k)
+        results = None
+        if self.vectordb:
+            results = self.vectordb.similarity_search(query, k=k)
         return results
