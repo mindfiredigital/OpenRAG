@@ -17,7 +17,7 @@ hurry.filesize
 python-dotenv
 sentence-transformers
 chromadb==0.5.5
-protobuf==3.20
+protobuf
 fastapi
 uvicorn
 python-multipart
