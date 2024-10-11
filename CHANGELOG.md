@@ -1,6 +1,23 @@
 # CHANGELOG
 
 
+## v0.9.0 (2024-10-11)
+
+### Documentation
+
+* docs: update docs for docker ([`3b6fa97`](https://github.com/mindfiredigital/OpenRAG/commit/3b6fa971991898a1d4426049212b7ede282c255d))
+
+### Features
+
+* feat: Dockerize the app ([`f17c08c`](https://github.com/mindfiredigital/OpenRAG/commit/f17c08c463dcf807cee04cd4268b6f1c1a5fc402))
+
+### Unknown
+
+* Merge pull request #19 from mindfiredigital/dev
+
+App Dockerize ([`ffeea75`](https://github.com/mindfiredigital/OpenRAG/commit/ffeea757deee0114f677e8c0fc47da784a3ffefc))
+
+
 ## v0.8.0 (2024-10-09)
 
 ### Documentation
