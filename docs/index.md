@@ -11,6 +11,7 @@
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
+    - [Dockerization](#dockerization)
   - [Usage](#usage)
   - [Contributing](#contributing)
   - [License](#license)
@@ -53,22 +54,44 @@ Instructions on how to get started with your project, including installation, pr
 ### Installation
 
 Provide detailed installation steps using code blocks to show commands or configuration files.
+
   - Clone the repo
+
   - Create virtualenv
+
   - Install requirements using requirements.txt ``pip install -r requirements.txt``
+
   - Run this command to download spacy stuffs ``python3 -m spacy download en_core_web_sm``
+
   - Run the application using command ``uvicorn main:app``
+
+### Dockerization
+
+To simplify deployment, Docker can be used to run the application.
+
+  **Build Docker Image**
+
+  - Make sure Docker is installed.
+
+  - Build the Docker image: ``docker build -t openrag-app .``
+
+  - Run the Docker container on port 8000: ``docker run -d -p 8000:8000 openrag-app``
+
+  - Access the app at [http://localhost:8000](http://localhost:8000).
 
 ### Usage
 
 The application is API-first and can be integrated with various frontend tools. The primary use cases include:
+
   - Uploading a PDF and querying the content through a selected LLM model and vector database.
+
   - Retrieving previously created collections for querying data.
+
   - Switching between supported LLMs and vector databases for different sessions.
 
   ### Example API Usage:
 
-  ```
+  ```bash
   curl -X POST "https://example.com/upload" \
   -H "accept: application/json" \
   -H "Content-Type: multipart/form-data" \
