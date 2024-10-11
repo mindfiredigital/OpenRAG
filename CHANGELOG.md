@@ -1,6 +1,23 @@
 # CHANGELOG
 
 
+## v0.8.0 (2024-10-09)
+
+### Documentation
+
+* docs: update api docs ([`f00b875`](https://github.com/mindfiredigital/OpenRAG/commit/f00b875f7b693905a8535b5274fdc8fec8d81e4f))
+
+### Features
+
+* feat: add custom prompt option ([`d53929f`](https://github.com/mindfiredigital/OpenRAG/commit/d53929f05e707bb1b3c5c94e79a6cca047cbf49f))
+
+### Unknown
+
+* Merge pull request #18 from mindfiredigital/dev
+
+Custom Prompt ([`fbd0d35`](https://github.com/mindfiredigital/OpenRAG/commit/fbd0d35e32eb6943baeb2eaa8a28cecd387c0d16))
+
+
 ## v0.7.1 (2024-10-09)
 
 ### Documentation

@@ -306,6 +306,15 @@
 </li>
 
           <li class="md-nav__item">
+  <a href="#dockerization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dockerization
+    </span>
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
       Usage
@@ -554,6 +563,15 @@
 </li>
 
           <li class="md-nav__item">
+  <a href="#dockerization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dockerization
+    </span>
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
       Usage
@@ -647,6 +665,7 @@
 <li><a href="#getting-started">Getting Started</a><ul>
 <li><a href="#prerequisites">Prerequisites</a></li>
 <li><a href="#installation">Installation</a></li>
+<li><a href="#dockerization">Dockerization</a></li>
 </ul>
 </li>
 <li><a href="#usage">Usage</a></li>
@@ -693,19 +712,56 @@ enabling users to interact with and query their data using different AI models a
 <li>Check the port 6333 on localhost is accesible</li>
 </ul>
 <h3 id="installation">Installation</h3>
-<p>Provide detailed installation steps using code blocks to show commands or configuration files.
-  - Clone the repo
-  - Create virtualenv
-  - Install requirements using requirements.txt <code>pip install -r requirements.txt</code>
-  - Run this command to download spacy stuffs <code>python3 -m spacy download en_core_web_sm</code>
-  - Run the application using command <code>uvicorn main:app</code></p>
+<p>Provide detailed installation steps using code blocks to show commands or configuration files.</p>
+<ul>
+<li>
+<p>Clone the repo</p>
+</li>
+<li>
+<p>Create virtualenv</p>
+</li>
+<li>
+<p>Install requirements using requirements.txt <code>pip install -r requirements.txt</code></p>
+</li>
+<li>
+<p>Run this command to download spacy stuffs <code>python3 -m spacy download en_core_web_sm</code></p>
+</li>
+<li>
+<p>Run the application using command <code>uvicorn main:app</code></p>
+</li>
+</ul>
+<h3 id="dockerization">Dockerization</h3>
+<p>To simplify deployment, Docker can be used to run the application.</p>
+<p><strong>Build Docker Image</strong></p>
+<ul>
+<li>
+<p>Make sure Docker is installed.</p>
+</li>
+<li>
+<p>Build the Docker image: <code>docker build -t openrag-app .</code></p>
+</li>
+<li>
+<p>Run the Docker container on port 8000: <code>docker run -d -p 8000:8000 openrag-app</code></p>
+</li>
+<li>
+<p>Access the app at <a href="http://localhost:8000">http://localhost:8000</a>.</p>
+</li>
+</ul>
 <h3 id="usage">Usage</h3>
-<p>The application is API-first and can be integrated with various frontend tools. The primary use cases include:
-  - Uploading a PDF and querying the content through a selected LLM model and vector database.
-  - Retrieving previously created collections for querying data.
-  - Switching between supported LLMs and vector databases for different sessions.</p>
+<p>The application is API-first and can be integrated with various frontend tools. The primary use cases include:</p>
+<ul>
+<li>
+<p>Uploading a PDF and querying the content through a selected LLM model and vector database.</p>
+</li>
+<li>
+<p>Retrieving previously created collections for querying data.</p>
+</li>
+<li>
+<p>Switching between supported LLMs and vector databases for different sessions.</p>
+</li>
+</ul>
 <p>### Example API Usage:</p>
-<p>```
+<p>```bash
   curl -X POST "https://example.com/upload" \
   -H "accept: application/json" \
   -H "Content-Type: multipart/form-data" \

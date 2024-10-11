@@ -61,6 +61,16 @@ Provide detailed installation steps using code blocks to show commands or config
   - Run this command to download spacy stuffs ``python3 -m spacy download en_core_web_sm``
   - Run the application using command ``uvicorn main:app``
 
+### Dockerization
+
+To simplify deployment, Docker can be used to run the application.
+
+  **Build Docker Image**
+  - Make sure Docker is installed.
+  - Build the Docker image: ``docker build -t openrag-app .``
+  - Run the Docker container on port 8000: ``docker run -d -p 8000:8000 openrag-app``
+  - Access the app at [http://localhost:8000](http://localhost:8000).
+
 ### Usage
 
 The application is API-first and can be integrated with various frontend tools. The primary use cases include:
