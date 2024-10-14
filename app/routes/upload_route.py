@@ -8,6 +8,7 @@ from config.log_config import logger
 from utils.constant import MODEL_LIST, VectorDB, EmbeddingModel
 from controller.upload_file import extract_and_create_temp_file
 from controller.Openembedder import OpenEmbedder
+from controller.Openllm import OpenLLM
 
 # Ensure temporary directory exists
 tmp_dir = Path("tmp")
@@ -55,6 +56,14 @@ async def upload_pdf(
     if model_name not in MODEL_LIST:
         logger.error("Invalid model name: %s", model_name)
         raise HTTPException(status_code=400, detail="Invalid model name")
+
+    is_model_exists = OpenLLM.model_exists(model_name)
+
+    if not is_model_exists:
+        logger.error("Model is not downloaded, Please download first: %s", model_name)
+        raise HTTPException(
+            status_code=400, detail="Model is not downloaded, Please download first"
+        )
 
     if file.content_type != "application/pdf":
         logger.error("Invalid file type: %s", file.content_type)
