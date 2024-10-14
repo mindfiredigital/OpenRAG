@@ -194,3 +194,29 @@ def test_pdf_upload_large_file_size_400(client):
         files={"file": ("test.pdf", file_content, "application/pdf")},
     )
     assert response.status_code == 400
+
+
+def test_pdf_upload_model_donload_400(client):
+    # Create a valid minimal PDF content
+    valid_pdf_content = (
+        b"%PDF-1.4\n"
+        b"1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n"
+        b"2 0 obj\n<< /Type /Pages /Kids [3 0 R] /Count 1 >>\nendobj\n"
+        b"3 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox [0 0 300 144] >>\nendobj\n"
+        b"xref\n0 4\n0000000000 65535 f \n0000000010 00000 n \n0000000074 00000 n \n"
+        b"0000000178 00000 n \ntrailer\n<< /Size 4 /Root 1 0 R >>\nstartxref\n261\n"
+        b"%%EOF\n"
+    )
+
+    file_content = io.BytesIO(valid_pdf_content)
+    file_content.name = "test.pdf"
+    response = client.post(
+        "/upload",
+        data={
+            "model_name": "qwen2-1_5b-instruct-q4_0.gguf",
+            "vector_db_name": "faiss",
+            "embedding_model": "mixedbread-ai/mxbai-embed-large-v1",
+        },
+        files={"file": ("test.pdf", file_content, "application/pdf")},
+    )
+    assert response.status_code == 400
