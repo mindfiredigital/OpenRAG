@@ -1,6 +1,23 @@
 # CHANGELOG
 
 
+## v0.10.0 (2024-10-15)
+
+### Features
+
+* feat: add new model download api and model download status check ([`e62401e`](https://github.com/mindfiredigital/OpenRAG/commit/e62401e39a4af1f12ea748d1fe2c68efc6f40205))
+
+### Testing
+
+* test: update test cases ([`8c8a675`](https://github.com/mindfiredigital/OpenRAG/commit/8c8a675c2bcd81c0cefc6aa09976ed2619ccc44d))
+
+### Unknown
+
+* Merge pull request #20 from mindfiredigital/dev
+
+Model download Api and checks ([`75e199a`](https://github.com/mindfiredigital/OpenRAG/commit/75e199a38e04ee84a61d9d8aadffce111bcd234d))
+
+
 ## v0.9.0 (2024-10-11)
 
 ### Documentation
