@@ -179,6 +179,34 @@ The OpenRAG API allows for interaction with a variety of endpoints to manage LLM
 
 ---
 
+### **7. Download Model**
+- **Endpoint:** `/download-model`
+- **Method:** `POST`
+- **Summary:** Initiates the download of a specified GPT4All model if it is not already available locally.
+- **Operation ID:** `model_download_post`
+- **Parameters:**
+  - **model_name (string, required, query):** The name of the LLM model to use for download.
+- **Responses:**
+  - **200 (Successful Response):**
+    - **Content Type:** `application/json`
+    - **Schema:** An empty schema, indicating the response will contain a simple JSON structure.
+  - **422 (Validation Error):**
+    - **Content Type:** `application/json`
+    - **Schema:**
+      - **HTTPValidationError:**
+        - **detail (array of ValidationError):** Contains details of the validation error.
+- **Code Example**
+
+  ```
+  curl -X POST "http://<your-server-address>/download-model" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model_name": "<your-model-name>"
+  }'
+  ```
+
+---
+
 ## **Components**
 
 ### **Schemas**
