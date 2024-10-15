@@ -309,6 +309,15 @@
 
 </li>
 
+          <li class="md-nav__item">
+  <a href="#7-download-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Download Model
+    </span>
+  </a>
+
+</li>
+
       </ul>
     </nav>
 
@@ -535,6 +544,15 @@
   <a href="#6-vector-db-list" class="md-nav__link">
     <span class="md-ellipsis">
       6. Vector DB List
+    </span>
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#7-download-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Download Model
     </span>
   </a>
 
@@ -833,6 +851,37 @@
 </ul>
 <p><code>curl -X GET "http://&lt;your-server-address&gt;/vector-db-list" \
   -H "accept: application/json"</code></p>
+<hr />
+<h3 id="7-download-model"><strong>7. Download Model</strong></h3>
+<ul>
+<li><strong>Endpoint:</strong> <code>/download-model</code></li>
+<li><strong>Method:</strong> <code>POST</code></li>
+<li><strong>Summary:</strong> Initiates the download of a specified GPT4All model if it is not already available locally.</li>
+<li><strong>Operation ID:</strong> <code>model_download_post</code></li>
+<li><strong>Parameters:</strong></li>
+<li><strong>model_name (string, required, query):</strong> The name of the LLM model to use for download.</li>
+<li><strong>Responses:</strong></li>
+<li><strong>200 (Successful Response):</strong><ul>
+<li><strong>Content Type:</strong> <code>application/json</code></li>
+<li><strong>Schema:</strong> An empty schema, indicating the response will contain a simple JSON structure.</li>
+</ul>
+</li>
+<li><strong>422 (Validation Error):</strong><ul>
+<li><strong>Content Type:</strong> <code>application/json</code></li>
+<li><strong>Schema:</strong></li>
+<li><strong>HTTPValidationError:</strong><ul>
+<li><strong>detail (array of ValidationError):</strong> Contains details of the validation error.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Code Example</strong></li>
+</ul>
+<p><code>curl -X POST "http://&lt;your-server-address&gt;/download-model" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model_name": "&lt;your-model-name&gt;"
+  }'</code></p>
 <hr />
 <h2 id="components"><strong>Components</strong></h2>
 <h3 id="schemas"><strong>Schemas</strong></h3>
