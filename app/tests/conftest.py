@@ -7,6 +7,7 @@ from fastapi.testclient import TestClient
 from main import app
 from utils.constant import LLM_OPTIONS, VectorDB
 from controller.Openembedder import OpenEmbedder
+from controller.Openllm import OpenLLM
 from controller.upload_file import extract_and_create_temp_file
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -33,6 +34,14 @@ def mock_embed_documents():
     return [[0.1] * 768 for _ in texts]  # Assuming embeddings have size 768
 
 
+class MockOpenLLM:
+    # pylint: disable=too-few-public-methods
+    @classmethod
+    def download_model(cls, model_name):
+        print(model_name)
+        return True
+
+
 app.dependency_overrides[
     extract_and_create_temp_file
 ] = mock_extract_and_create_temp_file
@@ -43,6 +52,7 @@ app.dependency_overrides[
 app.dependency_overrides[
     "sentence_transformers.SentenceTransformer.encode"
 ] = mock_embed_documents
+app.dependency_overrides[OpenLLM.download_model] = MockOpenLLM.download_model
 
 
 @pytest.fixture

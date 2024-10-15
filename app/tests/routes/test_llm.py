@@ -83,3 +83,20 @@ def test_check_collection_200(client):
         "&vector_db_name=chromadb&embedding_model=mixedbread-ai/mxbai-embed-large-v1"
     )
     assert response.status_code == 200
+
+
+def test_model_download_200(client):
+    response = client.post(
+        "/download-model", json={"model_name": "Meta-Llama-3-8B-Instruct.Q4_0.gguf"}
+    )
+    assert response.status_code == 200
+
+
+def test_empty_model_download_400(client):
+    response = client.post("/download-model", json={"model_name": ""})
+    assert response.status_code == 400
+
+
+def test_invalid_model_download_400(client):
+    response = client.post("/download-model", json={"model_name": "test"})
+    assert response.status_code == 400

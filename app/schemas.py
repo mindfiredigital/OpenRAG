@@ -39,3 +39,14 @@ class ChatRequest(BaseModel):
     vector_db_name: VectorDB
     embedding_model: EmbeddingModel
     custom_prompt: str = None  # Optional custom prompt
+
+
+class ModelName(BaseModel):
+    """
+    Represents the structure of the request body for initiating a model download.
+
+    Attributes:
+        model_name (str): The Large Language Model (LLM) that will be used for downloading.
+    """
+
+    model_name: str

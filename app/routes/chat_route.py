@@ -9,7 +9,7 @@ from utils.utils import (
 )
 from utils.constant import MODEL_LIST
 from controller.Openembedder import OpenEmbedder
-from controller.Openllm import OpenLLM
+from controller.Openllm import OpenLLM, ModelNotFoundError
 from schemas import ChatRequest
 
 
@@ -112,6 +112,12 @@ async def start_chat(request: ChatRequest):
             {"role": "assistant", "content": processed_text}
         )
         return {"response": llm_result}
+    except ModelNotFoundError as e:
+        logger.exception("Model is not downloaded yet, please download first")
+        raise HTTPException(
+            status_code=500,
+            detail="Model is not downloaded yet, please download first.",
+        ) from e
 
     except Exception as e:
         logger.exception("Failed to process chat request")
