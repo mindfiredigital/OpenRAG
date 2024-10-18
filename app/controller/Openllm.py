@@ -1,6 +1,12 @@
 import os
 import threading
+import time
+from typing import Iterator
+
 import gpt4all
+
+from utils.utils import preprocess_text, chat_histories
+from config.log_config import logger
 
 
 class ModelNotFoundError(Exception):
@@ -103,7 +109,9 @@ class OpenLLM:
         threading.Thread(target=download).start()
         return False
 
-    def generate_response(self, prompt: str, max_tokens: int = 3000) -> str:
+    def generate_response(
+        self, prompt: str, max_tokens: int = 3000, stream: bool = False
+    ) -> str:
         """
         Generates a response from the selected LLM based on the given prompt.
 
@@ -124,5 +132,22 @@ class OpenLLM:
         if not OpenLLM.model_exists(self.model_name):
             raise ModelNotFoundError(self.model_name)
 
-        response = self.model.generate(prompt, max_tokens=max_tokens)
-        return response
+        if stream:
+            return self.model.generate(prompt, max_tokens=max_tokens, streaming=True)
+        return self.model.generate(prompt, max_tokens=max_tokens)
+
+
+# Generator function to stream the LLM response
+def llm_response_stream(llm, final_prompt: str, session_id: str) -> Iterator[str]:
+    full_response = (
+        ""  # To collect the full response for logging and further processing
+    )
+
+    for token in llm.generate_response(final_prompt, stream=True):
+        yield token
+        time.sleep(0.1)  # To simulate real-time response
+
+    logger.info("LLM Response: %s", full_response)
+    processed_text = preprocess_text(full_response)
+    chat_histories[session_id].append({"role": "assistant", "content": processed_text})
+    logger.info("Updated chat history for session: %s", session_id)

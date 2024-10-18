@@ -139,7 +139,8 @@ The OpenRAG API allows for interaction with a variety of endpoints to manage LLM
     "model_name": "<your-model-name>",
     "vector_db_name": "<your-vector-db-name>",
     "embedding_model": "<your-embedding-model-name>",
-    "custom_prompt": "<optional-custom-prompt>"  # Optional field, remove if not needed
+    "custom_prompt": "<optional-custom-prompt>",  # Optional field, remove if not needed
+    "device": "cpu" # default value and can be used for gpu as well
   }'
 
   ```
