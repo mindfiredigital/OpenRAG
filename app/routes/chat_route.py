@@ -1,17 +1,16 @@
 from fastapi import APIRouter, HTTPException
+from fastapi.responses import StreamingResponse
 from config.log_config import logger
 from utils.utils import (
     chat_histories,
     generate_final_prompt,
     manage_chat_history,
-    preprocess_text,
     validate_custom_prompt,
 )
 from utils.constant import MODEL_LIST
 from controller.Openembedder import OpenEmbedder
-from controller.Openllm import OpenLLM, ModelNotFoundError
+from controller.Openllm import OpenLLM, ModelNotFoundError, llm_response_stream
 from schemas import ChatRequest
-
 
 router = APIRouter(prefix="", tags=["Chat"])
 
@@ -68,7 +67,7 @@ async def start_chat(request: ChatRequest):
             collection_name=request.collection_name,
             embedding_model_name=request.embedding_model,
         )
-        llm = OpenLLM(model_name=request.model_name)
+        llm = OpenLLM(model_name=request.model_name, device=request.device)
         hybrid_result = embedder.query_database(query=request.query, k=3)
 
         if hybrid_result is None:
@@ -105,13 +104,17 @@ async def start_chat(request: ChatRequest):
             # Use the default prompt if no custom prompt is provided
             final_prompt = generate_final_prompt(history_prompt, results, request.query)
 
-        llm_result = llm.generate_response(final_prompt)
-        logger.info("LLM Response: %s", llm_result)
-        processed_text = preprocess_text(llm_result)
-        chat_histories[session_id].append(
-            {"role": "assistant", "content": processed_text}
+        # llm_result = llm.generate_response(final_prompt)
+        # logger.info("LLM Response: %s", llm_result)
+        # processed_text = preprocess_text(llm_result)
+        # chat_histories[session_id].append(
+        #     {"role": "assistant", "content": processed_text}
+        # )
+        # return {"response": llm_result}
+        # Stream response using StreamingResponse
+        return StreamingResponse(
+            llm_response_stream(llm, final_prompt, session_id), media_type="text/plain"
         )
-        return {"response": llm_result}
     except ModelNotFoundError as e:
         logger.exception("Model is not downloaded yet, please download first")
         raise HTTPException(

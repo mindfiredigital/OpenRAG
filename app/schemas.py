@@ -39,6 +39,7 @@ class ChatRequest(BaseModel):
     vector_db_name: VectorDB
     embedding_model: EmbeddingModel
     custom_prompt: str = None  # Optional custom prompt
+    device: str = "cpu"
 
 
 class ModelName(BaseModel):
