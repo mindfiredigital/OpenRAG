@@ -1,6 +1,29 @@
 # CHANGELOG
 
 
+## v0.11.0 (2024-10-18)
+
+### Documentation
+
+* docs: update api docs ([`2afc9b0`](https://github.com/mindfiredigital/OpenRAG/commit/2afc9b04bfa142f8a541ff60183a98291640d661))
+
+* docs: update new endpoint ([`2b25d86`](https://github.com/mindfiredigital/OpenRAG/commit/2b25d8614add9a84e43234feae05f456b1863120))
+
+### Features
+
+* feat: add device option and stream response ([`33fdafc`](https://github.com/mindfiredigital/OpenRAG/commit/33fdafc9fa2521c5467e4e0f6b3f7a36bfbf37e4))
+
+### Unknown
+
+* Merge pull request #22 from mindfiredigital/dev
+
+Add device in chat ([`d59c7eb`](https://github.com/mindfiredigital/OpenRAG/commit/d59c7ebc240282567ac5bd4cbe4caceafa9e142e))
+
+* Merge pull request #21 from mindfiredigital/dev
+
+API Docs ([`881d5b0`](https://github.com/mindfiredigital/OpenRAG/commit/881d5b0fb9b05e6b1b70054f77a6861c63fb4a4e))
+
+
 ## v0.10.0 (2024-10-15)
 
 ### Features
